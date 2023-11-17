@@ -97,7 +97,7 @@ Funkcjonalności:
 
 Ogranizator:
 -przeglądanie eventów
--dodaj nowy event(przycisk nowy event) --> przekazanie danych do formularza
+-dodaj nowy event(przycisk nowy event) przekazanie danych do formularza
 -nanoszenie zmian w wydarzeniu(modyfkiacja/usuwanie)
 -przypominenie o nadchodzących eventach(sprawdzanie daty)
 -sprawdzenie listy uczestników
@@ -105,4 +105,4 @@ Ogranizator:
 Uczestnik:
 -przeglądanie eventów
 -przypominenie o nadchodzących eventach(sprawdzanie daty)
--wzięcie udziału(przycisk i przekierowanie do formularza) --> przekazanie danych do formularza i kupienie biletu -->
+-wzięcie udziału(przycisk i przekierowanie do formularza) przekazanie danych do formularza i kupienie biletu -->
