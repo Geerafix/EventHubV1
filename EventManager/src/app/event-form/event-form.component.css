@@ -1,0 +1,16 @@
+#eventData {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+  text-align: left;
+  border-width: 2px;
+  border-style: solid;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#eventForm {
+  display: flex;
+  justify-content: center;
+}
