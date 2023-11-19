@@ -10,5 +10,5 @@ import { Event } from '../classes/Event';
   styleUrl: './event-form.component.css'
 })
 export class EventFormComponent {
-  test = new Event("test1", "test2", "test3", "test4", 5, 6, new Date(), new Date, 7);
+  test: Event = new Event("test1", "test2", "test3", "test4", 5, 6, new Date(), new Date, 7);
 }
