@@ -1,13 +1,16 @@
 #eventData {
   display: flex;
   flex-direction: column;
+  position: absolute;
   gap: 10px;
   width: fit-content;
   text-align: left;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
-  padding: 20px;
   border-radius: 20px;
+  border-color: cadetblue;
+  padding: 20px;
+  margin-block: 100px;
 }
 
 #eventForm {

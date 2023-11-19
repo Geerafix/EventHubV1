@@ -33,10 +33,10 @@ export class Event {
   }
 
   get _nazwa(): string { return this.nazwa; }
-  set _nazwa(nazwa: string) { this.nazwa = nazwa; }
+  set _nazwa(value: string) { this.nazwa = value; }
 
   get _rodzaj(): string { return this.rodzaj; }
-  set _rodzaj(rodzaj: string) { this.rodzaj = rodzaj; }
+  set _rodzaj(value: string) { this.rodzaj = value; }
 
   get _organizator(): string { return this.organizator; }
   set _organizator(value: string) { this.organizator = value; }

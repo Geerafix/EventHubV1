@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Event } from '../model/Event';
+import { Event } from '../classes/Event';
 
 @Component({
   selector: 'app-event-form',
