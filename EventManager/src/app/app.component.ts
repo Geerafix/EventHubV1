@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { EventFormComponent } from './event-form/event-form.component';
+import { EventComponent } from './event/event.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, EventFormComponent],
+  imports: [CommonModule, RouterOutlet, EventComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
