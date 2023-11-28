@@ -1,4 +1,6 @@
 export class Event {
+[x: string]: any;
+  private id: number;
   private nazwa: string;
   private rodzaj: string;
   private organizator: string;
@@ -10,7 +12,8 @@ export class Event {
   // private plan: Plan[];
   private cena_biletu: number;
 
-  constructor(nazwa: string,
+  constructor(id: number,
+              nazwa: string,
               rodzaj: string,
               organizator: string,
               miejsce: string,
@@ -20,6 +23,7 @@ export class Event {
               data_zakonczenia: Date,
               /* plan: Plan[], */
               cena_biletu: number) {
+    this.id = id;
     this.nazwa = nazwa;
     this.rodzaj = rodzaj;
     this.organizator = organizator;
@@ -31,6 +35,9 @@ export class Event {
     /* this.plan = plan; */
     this.cena_biletu = cena_biletu;
   }
+
+  get _id(): number { return this.id; }
+  set _id(value: number) { this.id = value; }
 
   get _nazwa(): string { return this.nazwa; }
   set _nazwa(value: string) { this.nazwa = value; }

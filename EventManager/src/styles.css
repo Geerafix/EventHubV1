@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+header {
+  text-align: center;
+  font-size: 70px;
+  background-color: rgb(14, 57, 93);
+  margin-top: -70px;
+}
+
+body {
+  margin: 0px;
+}
+
+p  {
+  font-family: "Century Gothic", serif;
+  color: aliceblue;
+  padding: 10px;
+}
+

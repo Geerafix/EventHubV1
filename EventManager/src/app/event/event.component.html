@@ -1,13 +1,30 @@
-<main id="eventForm">
-  <div id="eventData">
-    <label><span class="info">Nazwa: </span>{{ event1._nazwa }}</label>
-    <label><span class="info">Rodzaj: </span>{{ event1._rodzaj }}</label>
-    <label><span class="info">Organizator: </span>{{ event1._organizator }}</label>
-    <label><span class="info">Miejsce: </span>{{ event1._miejsce }}</label>
-    <label><span class="info">Ilość osób: </span>{{ event1._ilosc_osob }}</label>
-    <label><span class="info">Max ilość osób: </span>{{ event1._max_ilosc_osob }}</label>
-    <label><span class="info">Data rozpoczęcia: </span>{{ event1._data_rozpoczecia }}</label>
-    <label><span class="info">Data zakończenia: </span>{{ event1._data_zakonczenia }}</label>
-    <label><span class="info">Cena biletu: </span>{{ event1._cena_biletu }} zł</label>
+<main id="container">
+  <div class="mainContainer">
+    <div class="controlContainer">
+      <div class="searchContainer">
+        <input [(ngModel)]="search" placeholder="Wyszukaj" />
+        <button (click)="filter()">Filtruj</button>
+      </div>
+        <div>
+          <button (click)="addEvent()">+</button>
+        </div>
+      </div>
+    <div id="eventData" *ngFor="let event of filteredEventList">
+      <label><span class="info">Nazwa: </span>{{ event._nazwa }}</label>
+      <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
+      <label><span class="info">Organizator: </span>{{ event._organizator }}</label>
+      <label><span class="info">Miejsce: </span>{{ event._miejsce }}</label>
+      <label><span class="info">Ilość osób: </span>{{ event._ilosc_osob }}</label>
+      <label><span class="info">Max ilość osób: </span>{{ event._max_ilosc_osob }}</label>
+      <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia }}</label>
+      <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia }}</label>
+      <label><span class="info">Cena biletu: </span>{{ event._cena_biletu }} zł</label>
+      <nav>
+        <a (click)="redirect(event._id)" id="info">Edytuj wydarzenie</a>
+      </nav>
+    </div>
   </div>
 </main>
+
+
+
