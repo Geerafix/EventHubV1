@@ -2,20 +2,22 @@
   <div class="mainContainer"  *ngIf="!isAddEventRoute()">
     <div class="controlContainer">
       <div class="searchContainer">
-        <input [(ngModel)]="search" placeholder="Wyszukaj" />
-        <select [(ngModel)]="searchBy">
-          <option value="nazwa">Nazwa</option>
-          <option value="rodzaj">Rodzaj</option>
-          <option value="organizator">Organizator</option>
-          <option value="miejsce">Miejsce</option>
-        </select>
-      </div>
-        <button id="add-event-button" routerLink="/dodaj-wydarzenie" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
-          </svg>
-        </button>
-      </div>
+        <div>
+          <input [(ngModel)]="search" placeholder="Wyszukaj" />
+          <select [(ngModel)]="searchBy">
+            <option value="nazwa">Nazwa</option>
+            <option value="rodzaj">Rodzaj</option>
+            <option value="organizator">Organizator</option>
+            <option value="miejsce">Miejsce</option>
+          </select>
+        </div>
+          <button id="add-event-button" routerLink="/dodaj-wydarzenie" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+            </svg>
+          </button>
+        </div>
+        </div>
     <div id="eventData" *ngFor="let event of eventList | searchevent: search:searchBy">
       <label><span class="info">Nazwa: </span>{{ event._nazwa }}</label>
       <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>

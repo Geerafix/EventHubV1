@@ -50,6 +50,11 @@ button {
 
 main > button:nth-child(1) {
   width: 40px;
+  margin-left: 2.5px;
+}
+
+main > button:nth-child(1):hover {
+  margin-left: -2.5px;
 }
 
 input:focus {
