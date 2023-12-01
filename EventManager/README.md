@@ -106,3 +106,24 @@ Uczestnik:
 -przeglądanie eventów
 -przypominenie o nadchodzących eventach(sprawdzanie daty)
 -wzięcie udziału(przycisk i przekierowanie do formularza) przekazanie danych do formularza i kupienie biletu -->
+
+
+<!-- 
+Wymagania:
+klasa TypeScript (czy zdefiniowano i zastosowano klasę do organizacji danych, czy pola w klasie są prywatne ) - 1pkt
+typy TypeScript (czy każda zmienna ma przyporządkowany typ) - 1pkt
+zaawansowane elementy TypeScript (jeden z wymienionych): - 2pkt
+klasy pochodne TypeScript (czy wykorzystano również klasy pochodne) ,
+getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)+parametry opcjonalne metod (czy są i czy właściwie dobrane)+modyfikatory dostępu w konstruktorze.
+wykorzystanie formularzy, min. 5 elementów (czy właściwie wybrano dane do wprowadzania i dobrano rodzaj elementu formularza, czy nie ma dwustronnego wiązania danych w szablonie) - 1pkt
+walidacja danych wprowadzanych przez użytkownika ( w każdym przypadku wprowadzania danych, czy odpowiednio dobrano walidatory) - 2pkt,
+dwukierunkowa komunikacja pomiędzy komponentami (czy jest w każdym spodziewanym przypadku) - 2pkt,
+modyfikacja danych odbywa się tylko w jednym komponencie - 1pkt
+operacje modyfikacji danych za pomocą 4 rodzajów żądań http - 1pkt
+dane pochodzące z jednej klasy usługi - 1pkt
+dodatkowy serwis (a)synchroniczny - 1pkt
+własna dyrektywa - 1pkt
+wykorzystanie dowolnego filtru standardowego w szablonie  - 1pkt
+implementacja własnego filtru - 2pkt
+routing (ścieżki 'routes', w tym jedna z parametrem, operacje na obiekcie ActivateRoute i Route) - 1pkt 
+-->
