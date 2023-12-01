@@ -14,7 +14,8 @@ body {
 p  {
   font-family: "Century Gothic", serif;
   font-weight: bold;
-  color: rgba(178, 224, 222, 0.937);;
+  font-size: 4.5vw;
+  color: rgba(178, 224, 222, 0.937);
   padding: 10px;
   margin-block-start: 0px;
   margin-block-end: 30px;

@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-addevent',
+  selector: 'app-add-event',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './addevent.component.html',
-  styleUrl: './addevent.component.css'
+  templateUrl: './add-event.component.html',
+  styleUrl: './add-event.component.css'
 })
-
-export class AddeventComponent {
+export class AddEventComponent {
 
 }

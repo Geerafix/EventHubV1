@@ -2,16 +2,17 @@ import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Event } from '../models/Event';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { SearchEventPipe } from "../pipes/searchevent.pipe";
+import { AddEventComponent } from '../add-event/add-event.component';
 
 @Component({
     selector: 'app-event',
     standalone: true,
     templateUrl: './event.component.html',
     styleUrl: './event.component.css',
-    imports: [CommonModule, FormsModule, SearchEventPipe]
+    imports: [CommonModule, FormsModule, SearchEventPipe, RouterLink, RouterOutlet, RouterLinkActive, AddEventComponent]
 })
 export class EventComponent implements OnInit {
   eventList: Event[] = [];
@@ -29,14 +30,8 @@ export class EventComponent implements OnInit {
 
   searchBy: string = 'nazwa';
 
-  redirect(id : number){
-    this.router.navigate(['szczegoly', id]);
-  }
+  constructor(private router: Router) {}
 
-  addEvent() {
-    this.router.navigate(['dodaj-wydarzenie']);
-  }
-  constructor(private route: ActivatedRoute, private router: Router) {}
   ngOnInit(): void {
     this.eventList.push(this.event1);
     this.eventList.push(this.event2);
@@ -48,5 +43,9 @@ export class EventComponent implements OnInit {
     this.eventList.push(this.event8);
     this.eventList.push(this.event9);
     this.eventList.push(this.event10);
+  }
+
+  isAddEventRoute(): boolean {
+    return this.router.url === '/dodaj-wydarzenie' ? true : false;
   }
 }

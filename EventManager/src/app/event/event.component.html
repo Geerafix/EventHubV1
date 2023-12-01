@@ -1,5 +1,5 @@
 <main id="container">
-  <div class="mainContainer">
+  <div class="mainContainer"  *ngIf="!isAddEventRoute()">
     <div class="controlContainer">
       <div class="searchContainer">
         <input [(ngModel)]="search" placeholder="Wyszukaj" />
@@ -10,7 +10,7 @@
           <option value="miejsce">Miejsce</option>
         </select>
       </div>
-        <button id="add-event-button" class="" (click)="addEvent()">
+        <button id="add-event-button" routerLink="/dodaj-wydarzenie" routerLinkActive="active" ariaCurrentWhenActive="page">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
           </svg>
@@ -26,10 +26,16 @@
       <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia }}</label>
       <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia }}</label>
       <label><span class="info">Cena biletu: </span>{{ event._cena_biletu }} zł</label>
-      <a (click)="redirect(event._id)" id="info">Edytuj wydarzenie</a>
+      <a id="info">Edytuj wydarzenie</a>
     </div>
+  </div>
+
+  <div class="mainContainer"  *ngIf="isAddEventRoute()">
+      <router-outlet></router-outlet>
   </div>
 </main>
 
 
 
+
+<!-- [routerLink]="['/szczegoly', event._id]" routerLinkActive="active" ariaCurrentWhenActive="page"  -->
