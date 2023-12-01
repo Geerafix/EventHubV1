@@ -15,7 +15,7 @@ import { SearchEventPipe } from "../pipes/searchevent.pipe";
 })
 export class EventComponent implements OnInit {
   eventList: Event[] = [];
-  event1: Event = new Event(1, "asd", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
+  event1: Event = new Event(1, "asd", "test2", "test3", "Białystok", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
   event2: Event = new Event(2, "da", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
   event3: Event = new Event(3, "tf", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
   event4: Event = new Event(4, "gf", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
@@ -27,13 +27,7 @@ export class EventComponent implements OnInit {
   event10: Event = new Event(10,"sdf", "test200", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
   search: string = "";
 
-  filteredEventList = this.eventList;
-
-  str: string = '';
-
-  filter() {
-    this.filteredEventList = this.eventList.filter((item) => item._nazwa.toLowerCase().includes(this.search));
-  }
+  searchBy: string = 'nazwa';
 
   redirect(id : number){
     this.router.navigate(['szczegoly', id]);
@@ -44,10 +38,6 @@ export class EventComponent implements OnInit {
   }
   constructor(private route: ActivatedRoute, private router: Router) {}
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      let eventId = params.get('id');
-    });
-
     this.eventList.push(this.event1);
     this.eventList.push(this.event2);
     this.eventList.push(this.event3);
@@ -58,6 +48,5 @@ export class EventComponent implements OnInit {
     this.eventList.push(this.event8);
     this.eventList.push(this.event9);
     this.eventList.push(this.event10);
-    this.str = this.event1._nazwa;
   }
 }

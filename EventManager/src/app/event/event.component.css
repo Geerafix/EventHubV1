@@ -56,9 +56,9 @@
   gap: 10px;
 }
 
-button, input {
+button, input, select {
   font-weight: bold;
-  color: rgb(45, 43, 43);
+  color: #14424b;
   padding: 10px;
   border-radius: 20px;
   border-style: none;
@@ -67,9 +67,26 @@ button, input {
 
 input:focus {
   cursor: text;
-  border-style: none;
+  border: none;
+  outline: none;
 }
 
 button:hover {
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+  padding: auto;
+  text-align: center;
+  align-items: center;
+}
+
+select:focus {
+  border: none;
+  outline: none;
+}
+
+select:hover {
   cursor: pointer;
 }

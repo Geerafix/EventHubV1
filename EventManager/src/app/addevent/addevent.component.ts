@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './addevent.component.html',
   styleUrl: './addevent.component.css'
 })
+
 export class AddeventComponent {
 
 }
