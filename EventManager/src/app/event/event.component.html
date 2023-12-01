@@ -3,13 +3,12 @@
     <div class="controlContainer">
       <div class="searchContainer">
         <input [(ngModel)]="search" placeholder="Wyszukaj" />
-        <button (click)="filter()">Filtruj</button>
       </div>
         <div>
           <button (click)="addEvent()">+</button>
         </div>
       </div>
-    <div id="eventData" *ngFor="let event of filteredEventList">
+    <div id="eventData" *ngFor="let event of eventList | searchevent: search">
       <label><span class="info">Nazwa: </span>{{ event._nazwa }}</label>
       <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
       <label><span class="info">Organizator: </span>{{ event._organizator }}</label>
@@ -19,9 +18,7 @@
       <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia }}</label>
       <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia }}</label>
       <label><span class="info">Cena biletu: </span>{{ event._cena_biletu }} zł</label>
-      <nav>
-        <a (click)="redirect(event._id)" id="info">Edytuj wydarzenie</a>
-      </nav>
+      <a (click)="redirect(event._id)" id="info">Edytuj wydarzenie</a>
     </div>
   </div>
 </main>

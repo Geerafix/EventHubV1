@@ -2,7 +2,6 @@ header {
   text-align: center;
   font-size: 70px;
   background-color: #19535F;
-  margin-top: -70px;
 }
 
 body {
@@ -12,7 +11,11 @@ body {
 
 p  {
   font-family: "Century Gothic", serif;
-  color: aliceblue;
+  font-weight: bold;
+  color: rgba(178, 224, 222, 0.937);;
   padding: 10px;
+  margin-block-start: 0px;
+  margin-block-end: 30px;
+  user-select: none;
 }
 

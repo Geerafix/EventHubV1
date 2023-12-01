@@ -1,16 +1,17 @@
 import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Event } from '../classes/Event';
+import { Event } from '../models/Event';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { SearchEventPipe } from "../pipes/searchevent.pipe";
 
 @Component({
-  selector: 'app-event',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './event.component.html',
-  styleUrl: './event.component.css'
+    selector: 'app-event',
+    standalone: true,
+    templateUrl: './event.component.html',
+    styleUrl: './event.component.css',
+    imports: [CommonModule, FormsModule, SearchEventPipe]
 })
 export class EventComponent implements OnInit {
   eventList: Event[] = [];
@@ -27,6 +28,8 @@ export class EventComponent implements OnInit {
   search: string = "";
 
   filteredEventList = this.eventList;
+
+  str: string = '';
 
   filter() {
     this.filteredEventList = this.eventList.filter((item) => item._nazwa.toLowerCase().includes(this.search));
@@ -55,10 +58,6 @@ export class EventComponent implements OnInit {
     this.eventList.push(this.event8);
     this.eventList.push(this.event9);
     this.eventList.push(this.event10);
+    this.str = this.event1._nazwa;
   }
-
-  // search(search: string) {
-  //   tekst = tekst.toLowerCase();
-  //   return dane.filter((wyraz) => wyraz.toLowerCase().includes(tekst));
-  // }
 }

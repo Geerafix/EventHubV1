@@ -1,5 +1,4 @@
 export class Event {
-[x: string]: any;
   private id: number;
   private nazwa: string;
   private rodzaj: string;
