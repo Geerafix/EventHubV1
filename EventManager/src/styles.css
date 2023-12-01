@@ -1,12 +1,13 @@
 header {
   text-align: center;
   font-size: 70px;
-  background-color: rgb(14, 57, 93);
+  background-color: #19535F;
   margin-top: -70px;
 }
 
 body {
   margin: 0px;
+  background-color: #0B7A75;
 }
 
 p  {
