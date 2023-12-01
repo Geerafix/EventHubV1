@@ -22,6 +22,7 @@
   justify-content: center;
   flex-direction: column;
   font-family: "Century Gothic", serif;
+  position: relative;
 }
 
 .info {
@@ -40,12 +41,12 @@
 
 .mainContainer {
   margin-inline: auto;
+  min-width: 692px;
 }
 
 .controlContainer {
   display: flex;
   justify-content: space-between;
-  margin-inline: 2px;
 }
 
 .searchContainer {
@@ -62,7 +63,9 @@ button, input, select {
   border-radius: 20px;
   border-style: none;
   background-color: rgba(178, 224, 222, 0.795);;
-  box-shadow: 0px 0px 7px 0.01px rgb(146, 112, 108), inset 0 0 1px 0.01px #1038404e;;
+  box-shadow: 0px 0px 7px 0.01px rgb(146, 112, 108), inset 0 0 1px 0.01px #1038404e;
+  transition: 0.2s;
+  outline: none;
 }
 
 input:focus {
@@ -73,6 +76,8 @@ input:focus {
 
 button:hover {
   cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 0px 10px 0.05px rgb(88, 64, 61);
 }
 
 select {
@@ -89,6 +94,8 @@ select:focus {
 
 select:hover {
   cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 0px 10px 0.05px rgb(88, 64, 61);
 }
 
 #add-event-button {
