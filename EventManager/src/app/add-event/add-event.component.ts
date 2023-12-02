@@ -1,46 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { EventDataService } from '../service/event-data.service';
 import { Event } from '../models/Event';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-event',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet, FormsModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet, FormsModule, ReactiveFormsModule],
   templateUrl: './add-event.component.html',
   styleUrl: './add-event.component.css'
 })
 export class AddEventComponent {
   eventList: Event[] = [];
-  id!: number;
-  nazwa!: string;
-  rodzaj!: string;
-  organizator!: string;
-  miejsce!: string;
-  max_ilosc_osob!: number;
-  data_rozpoczecia!: Date;
-  data_zakonczenia!: Date;
-  cena_biletu!: number;
+  event!: Event;
+  eventForm!: FormGroup;
 
   constructor(private router: Router, private eventDataSerice: EventDataService) {
     this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
+    this.eventForm = new FormGroup({
+      nazwa: new FormControl(),
+      rodzaj: new FormControl(),
+      organizator: new FormControl(),
+      miejsce: new FormControl(),
+      max_ilosc_osob: new FormControl(),
+      data_rozpoczecia: new FormControl(),
+      data_zakonczenia: new FormControl(),
+      cena_biletu: new FormControl(),
+    });
   }
 
   back(): void { this.router.navigate(['/']); }
 
   addEventToEventList(): void {
     this.eventList.push(new Event(this.eventList.length + 1,
-                                  this.nazwa,
-                                  this.rodzaj,
-                                  this.organizator,
-                                  this.miejsce,
+                                  this.eventForm.value.nazwa,
+                                  this.eventForm.value.rodzaj,
+                                  this.eventForm.value.organizator,
+                                  this.eventForm.value.miejsce,
                                   0,
-                                  this.max_ilosc_osob,
-                                  this.data_rozpoczecia,
-                                  this.data_zakonczenia,
-                                  this.cena_biletu));
+                                  this.eventForm.value.max_ilosc_osob,
+                                  new Date(this.eventForm.value.data_rozpoczecia),
+                                  new Date(this.eventForm.value.data_zakonczenia),
+                                  this.eventForm.value.cena_biletu));
     this.router.navigate(['/']);
   }
 }

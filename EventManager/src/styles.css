@@ -6,12 +6,16 @@ header {
   text-align: center;
   font-size: 70px;
   background-color: #19535F;
-  box-shadow: inset 0px -5px 8px -6px #03423f;
-  text-shadow: 0px 0px 20px #023633;
+  box-shadow: inset 0px -5px 8px -6px #023331;
+  text-shadow: 0px 0px 20px #02363375;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
 body {
-  margin: 0px;
+  margin-top: 112px;
   background-color: #0B7A75;
 }
 
@@ -19,10 +23,10 @@ p  {
   font-family: "Century Gothic", serif;
   font-weight: bold;
   font-size: 4.5vw;
-  color: rgba(178, 224, 222, 0.937);
+  color: rgba(212, 245, 243, 0.937);
   padding: 10px;
-  margin-block-start: 0px;
-  margin-block-end: 30px;
+  margin-block-start: -15px;
+  margin-block-end: -5px;
   user-select: none;
 }
 

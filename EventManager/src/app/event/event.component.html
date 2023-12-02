@@ -1,40 +1,42 @@
 <main id="container">
-  <div class="mainContainer"  *ngIf="!isAddEvent() && !isEventDetails()">
-    <div class="controlContainer">
-      <div class="searchContainer">
-          <input [(ngModel)]="search" placeholder="Wyszukaj" />
-          <select [(ngModel)]="searchBy">
-            <option value="nazwa">Nazwa</option>
-            <option value="rodzaj">Rodzaj</option>
-            <option value="miejsce">Miejsce</option>
-          </select>
-          <input [(ngModel)]="startDate" type="date">
-          <input [(ngModel)]="endDate" type="date">
-        </div>
-          <button id="add-event-button" (click)="addEvent()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>
-          </button>
-        </div>
-    <div id="eventData" *ngFor="let event of eventList | searchevent: search:searchBy | searchByDate: startDate:endDate">
-      <label><span class="info">Nazwa: </span>{{ event._nazwa }}</label>
+  <div class="main-container"  *ngIf="(!isAddEvent() && !isEventDetails() && !isBuyTicket())">
+    <div class="control-container">
+      <div class="search-container">
+        <input [(ngModel)]="search" placeholder="Wyszukaj" id="search"/>
+        <select [(ngModel)]="searchBy">
+          <option value="nazwa">Nazwa</option>
+          <option value="rodzaj">Rodzaj</option>
+          <option value="miejsce">Miejsce</option>
+        </select>
+        <input [(ngModel)]="startDate" placeholder="Od" type="text" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" class="date">
+        <input [(ngModel)]="endDate" placeholder="Do" type="text" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" class="date">
+        <button (click)="clearPipe()" id="clear-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16"><path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/></svg>
+        </button>
+      </div>
+        <button id="add-event-button" (click)="addEvent()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>
+        </button>
+    </div>
+    <div id="eventData" *ngFor="let event of eventList | search: search:searchBy | searchByDate: startDate:endDate">
+      <label class="title">{{ event._nazwa }}</label>
       <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
       <label><span class="info">Miejsce: </span>{{ event._miejsce }}</label>
       <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia | date: 'dd-MM-yyyy' }}</label>
       <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia | date: 'dd-MM-yyyy' }}</label>
-      <a (click)="showEventDetails(event)" id="info">Sczegóły</a>
+      <div class="interact">
+        <a (click)="showEventDetails(event)" id="info">Sczegóły</a>
+        <a (click)="buyTicket(event)">Kup bilet</a>
+      </div>
     </div>
   </div>
-  <div class="mainContainer"  *ngIf="isAddEvent()">
-      <router-outlet></router-outlet>
+  <div class="main-container" *ngIf="isAddEvent()">
+    <router-outlet></router-outlet>
   </div>
-  <div class="mainContainer"  *ngIf="isEventDetails()">
-      <router-outlet></router-outlet>
+  <div class="main-container" *ngIf="isEventDetails()">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="main-container" *ngIf="isBuyTicket()">
+    <router-outlet></router-outlet>
   </div>
 </main>
-
-
-<!-- [routerLink]="['/szczegoly', event._id]" routerLinkActive="active" ariaCurrentWhenActive="page"  -->
-<!-- <label><span class="info">Organizator: </span>{{ event._organizator }}</label> -->
-<!-- <label><span class="info">Ilość osób: </span>{{ event._ilosc_osob }}</label>
-<label><span class="info">Max ilość osób: </span>{{ event._max_ilosc_osob }}</label> -->
-<!-- <label><span class="info">Cena biletu: </span>{{ event._cena_biletu }} zł</label> -->

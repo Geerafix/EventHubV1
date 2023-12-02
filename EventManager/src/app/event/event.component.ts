@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Event } from '../models/Event';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { SearchEventPipe } from "../pipes/searchevent.pipe";
+import { SearchPipe } from "../pipes/search.pipe";
 import { AddEventComponent } from '../add-event/add-event.component';
 import { EventDataService } from '../service/event-data.service';
 import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
@@ -13,14 +13,14 @@ import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
     standalone: true,
     templateUrl: './event.component.html',
     styleUrl: './event.component.css',
-    imports: [CommonModule, FormsModule, SearchEventPipe, SearchByDatePipe, RouterLink, RouterOutlet, RouterLinkActive, AddEventComponent]
+    imports: [CommonModule, FormsModule, SearchPipe, SearchByDatePipe, RouterLink, RouterOutlet, RouterLinkActive, AddEventComponent]
 })
 export class EventComponent implements OnInit {
   eventList: Event[] = [];
-  search: string = "";
+  search: string = '';
   searchBy: string = 'nazwa';
-  startDate: string = "";
-  endDate: string = "";
+  startDate: string = '';
+  endDate: string = '';
 
   constructor(private router: Router, private eventDataService: EventDataService) {
     this.eventList.push(new Event(1, "Przedstawienie teatralne", "Rodzaj1", "Organizator1", "Białystok", 100, 200, new Date('2023-02-15'), new Date('2023-02-15'), 50));
@@ -41,16 +41,24 @@ export class EventComponent implements OnInit {
 
   isAddEvent(): boolean { return this.router.url.startsWith('/dodaj-wydarzenie'); }
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
+  isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
 
   addEvent() {
     this.router.navigate(['/dodaj-wydarzenie']);
-    this.startDate = "";
-    this.endDate = "";
   }
 
   showEventDetails(event: Event): void {
     this.router.navigate(['/szczegoly', event._id]);
-    this.startDate = "";
-    this.endDate = "";
+  }
+
+  buyTicket(event: Event): void {
+    this.router.navigate(['/kup-bilet', event._id])
+  }
+
+  clearPipe() {
+    this.search = '';
+    this.searchBy = 'nazwa'
+    this.startDate = '';
+    this.endDate = '';
   }
 }

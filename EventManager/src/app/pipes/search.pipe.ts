@@ -2,10 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Event } from '../models/Event';
 
 @Pipe({
-  name: 'searchevent',
+  name: 'search',
   standalone: true,
 })
-export class SearchEventPipe implements PipeTransform {
+export class SearchPipe implements PipeTransform {
   transform(value: Event[], searchValue: string, searchBy: string): Event[] {
     if (!value || !searchValue) {
       return value;

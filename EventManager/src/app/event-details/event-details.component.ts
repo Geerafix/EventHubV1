@@ -14,18 +14,25 @@ import { EventDataService } from '../service/event-data.service';
 export class EventDetailsComponent implements OnInit {
   public eventList: Event[] = [];
   event: Event | undefined;
-  private eventId!: number;
+  private id!: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
     this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => { this.eventId = +params['id']; });
-    this.event = this.eventList.find((e) => e._id === this.eventId);
+    this.route.params.subscribe((params) => { this.id = +params['id']; });
+    this.event = this.eventList.find((event) => event._id === this.id);
   };
 
+  isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
+  isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
+
   back(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
+  }
+
+  buyTicket(event: Event): void {
+    this.router.navigate(['/kup-bilet', event._id])
   }
 }

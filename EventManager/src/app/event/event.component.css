@@ -39,20 +39,20 @@
   text-decoration: underline;
 }
 
-.mainContainer {
+.main-container {
   margin-inline: auto;
   min-width: 49.8vw;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.controlContainer {
+.control-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.searchContainer {
+.search-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -69,6 +69,7 @@ button, input, select {
   box-shadow: 0px 0px 7px 0.01px rgb(146, 112, 108), inset 0 0 1px 0.01px #1038404e;
   transition: 0.2s;
   outline: none;
+  max-height: 40px;
 }
 
 input:focus {
@@ -105,4 +106,34 @@ select:hover {
   width: 40px;
   text-align: center;
   align-items: center;
+}
+
+.date {
+  width: 122px;
+}
+
+.date:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 0px 10px 0.05px rgb(88, 64, 61);
+}
+
+#search {
+  width: 122px;
+}
+
+#clear-btn {
+  width: 40px;
+}
+
+.title {
+  margin-inline: auto;
+  font-size: 25px;
+}
+
+.interact {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
