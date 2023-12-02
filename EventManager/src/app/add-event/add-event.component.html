@@ -7,15 +7,16 @@
   <div class="form-container">
     <div id="eventForm">
         <label>Formularz dodawania wydarzenia</label>
-        <input placeholder="Nazwa wydarzenia">
-        <input placeholder="Organizator wydarzenia">
-        <input placeholder="Miejsce wydarzenia">
-        <input type="number" placeholder="Maks. ilość osób">
-        <input type="date" placeholder="Data rozpoczęcia">
-        <input type="date" placeholder="Data zakończenia">
-        <input type="number" placeholder="Cena biletu">
+        <input [(ngModel)]="nazwa" placeholder="Nazwa wydarzenia">
+        <input [(ngModel)]="rodzaj" placeholder="Rodzaj wydarzenia">
+        <input [(ngModel)]="organizator" placeholder="Organizator wydarzenia">
+        <input [(ngModel)]="miejsce" placeholder="Miejsce wydarzenia">
+        <input [(ngModel)]="max_ilosc_osob" type="number" placeholder="Maks. ilość osób">
+        <input [(ngModel)]="data_rozpoczecia" type="date" placeholder="Data rozpoczęcia">
+        <input [(ngModel)]="data_zakonczenia" type="date" placeholder="Data zakończenia">
+        <input [(ngModel)]="cena_biletu" type="number" placeholder="Cena biletu">
     </div>
-    <button>Zatwierdź</button>
+    <button (click)="addEventToEventList()">Zatwierdź</button>
   </div>
   <router-outlet></router-outlet>
 </main>

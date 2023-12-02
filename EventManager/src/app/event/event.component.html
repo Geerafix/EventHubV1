@@ -8,19 +8,19 @@
             <option value="rodzaj">Rodzaj</option>
             <option value="miejsce">Miejsce</option>
           </select>
-          <input type="date" text="Od">
-          <input type="date" text="Do">
+          <input [(ngModel)]="startDate" type="date" text="Od">
+          <input [(ngModel)]="endDate" type="date" text="Do">
         </div>
           <button id="add-event-button" (click)="addEvent()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>
           </button>
         </div>
-    <div id="eventData" *ngFor="let event of eventList | searchevent: search:searchBy">
+    <div id="eventData" *ngFor="let event of eventList | searchevent: search:searchBy | searchByDate: startDate:endDate">
       <label><span class="info">Nazwa: </span>{{ event._nazwa }}</label>
       <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
       <label><span class="info">Miejsce: </span>{{ event._miejsce }}</label>
-      <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia }}</label>
-      <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia }}</label>
+      <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia | date: 'dd-MM-yyyy' }}</label>
+      <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia | date: 'dd-MM-yyyy' }}</label>
       <a (click)="showEventDetails(event)" id="info">Sczegóły</a>
     </div>
   </div>

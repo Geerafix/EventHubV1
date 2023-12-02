@@ -1,4 +1,3 @@
-// event.service.ts
 import { Injectable } from '@angular/core';
 import { Event } from '../models/Event';
 import { Observable, BehaviorSubject} from 'rxjs';

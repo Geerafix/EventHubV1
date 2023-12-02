@@ -120,7 +120,7 @@ Wymagania:
 
 * - wykorzystanie formularzy, min. 5 elementów (czy właściwie wybrano dane do wprowadzania i dobrano rodzaj elementu formularza, czy nie ma 
 
-- dwustronnego wiązania danych w szablonie) - 1pkt
+- dwustronnego wiązania danych w szablonie - 1pkt
 
 - walidacja danych wprowadzanych przez użytkownika ( w każdym przypadku wprowadzania danych, czy odpowiednio dobrano walidatory) -2pkt,
 
