@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SearchEventPipe } from "../pipes/searchevent.pipe";
 import { AddEventComponent } from '../add-event/add-event.component';
+import { EventDataService } from '../service/event-data.service';
 
 @Component({
     selector: 'app-event',
@@ -15,36 +16,30 @@ import { AddEventComponent } from '../add-event/add-event.component';
 })
 export class EventComponent implements OnInit {
   eventList: Event[] = [];
-  event1: Event = new Event(1, "asd", "test2", "test3", "Białystok", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event2: Event = new Event(2, "da", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event3: Event = new Event(3, "tf", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event4: Event = new Event(4, "gf", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event5: Event = new Event(5, "df", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event6: Event = new Event(6, "df", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event7: Event = new Event(7, "aSF", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event8: Event = new Event(8, "SDF", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event9: Event = new Event(9, "asfd", "test2", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
-  event10: Event = new Event(10,"sdf", "test200", "test3", "test4", 0, 6, new Date('01/01/2002'), new Date('05/01/2002'), 7);
   search: string = "";
-
   searchBy: string = 'nazwa';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private eventDataService: EventDataService) {
+    this.eventList.push(new Event(1, "Przedstawienie teatralne", "Rodzaj1", "Organizator1", "Białystok", 100, 200, new Date('2023-02-15T18:30:00'), new Date('2023-02-15T22:00:00'), 50));
+    this.eventList.push(new Event(2, "Koncert muzyczny", "Rodzaj2", "Organizator2", "InnyMiasto", 120, 250, new Date('2023-03-10T20:00:00'), new Date('2023-03-10T23:30:00'), 80));
+    this.eventList.push(new Event(3, "Wystawa sztuki", "Rodzaj3", "Organizator3", "JeszczeInneMiasto", 80, 180, new Date('2023-04-05T10:00:00'), new Date('2023-04-05T18:00:00'), 30));
+    this.eventList.push(new Event(4, "Konferencja naukowa", "Rodzaj4", "Organizator4", "MiastoKonferencji", 200, 350, new Date('2023-05-20T09:00:00'), new Date('2023-05-20T17:00:00'), 150));
+    this.eventList.push(new Event(5, "Pokaz filmowy", "Rodzaj5", "Organizator5", "FilmoweMiasto", 90, 150, new Date('2023-06-15T19:00:00'), new Date('2023-06-15T22:30:00'), 60));
+    this.eventList.push(new Event(6, "Warsztaty kulinarne", "Rodzaj6", "Organizator6", "GastronomiczneMiasto", 60, 100, new Date('2023-07-08T14:00:00'), new Date('2023-07-08T17:00:00'), 25));
+    this.eventList.push(new Event(7, "Sesja fotograficzna", "Rodzaj7", "Organizator7", "FotogeniczneMiasto", 110, 220, new Date('2023-08-03T16:30:00'), new Date('2023-08-03T20:00:00'), 45));
+    this.eventList.push(new Event(8, "Występ stand-upowy", "Rodzaj8", "Organizator8", "SmieszneMiasto", 70, 120, new Date('2023-09-18T21:00:00'), new Date('2023-09-18T23:30:00'), 40));
+    this.eventList.push(new Event(9, "Pokaz mody", "Rodzaj9", "Organizator9", "ModneMiasto", 85, 160, new Date('2023-10-12T17:00:00'), new Date('2023-10-12T21:00:00'), 55));
+    this.eventList.push(new Event(10, "Festiwal kulinarny", "Rodzaj10", "Organizator10", "KulinarnyOśrodek", 150, 300, new Date('2023-11-25T12:00:00'), new Date('2023-11-25T20:00:00'), 100));
+    this.eventDataService.send(this.eventList);
+  }
 
   ngOnInit(): void {
-    this.eventList.push(this.event1);
-    this.eventList.push(this.event2);
-    this.eventList.push(this.event3);
-    this.eventList.push(this.event4);
-    this.eventList.push(this.event5);
-    this.eventList.push(this.event6);
-    this.eventList.push(this.event7);
-    this.eventList.push(this.event8);
-    this.eventList.push(this.event9);
-    this.eventList.push(this.event10);
+
   }
 
-  isAddEventRoute(): boolean {
-    return this.router.url === '/dodaj-wydarzenie' ? true : false;
-  }
+  isAddEvent(): boolean { return this.router.url.startsWith('/dodaj-wydarzenie'); }
+  isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
+
+  addEvent() { this.router.navigate(['/dodaj-wydarzenie']); }
+  showEventDetails(event: Event): void { this.router.navigate(['/szczegoly', event._id]); }
 }

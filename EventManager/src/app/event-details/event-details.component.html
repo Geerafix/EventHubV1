@@ -1,1 +1,19 @@
-<p>event-details works!</p>
+<main>
+  <button id="add-event-button" (click)="back()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+    </svg>
+  </button>
+  <div id="eventData" *ngIf="event">
+    <label><span class="info">Nazwa: </span>{{ event._nazwa }}</label>
+    <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
+    <label><span class="info">Miejsce: </span>{{ event._miejsce }}</label>
+    <label><span class="info">Organizator: </span>{{ event._organizator }}</label>
+    <label><span class="info">Ilość osób: </span>{{ event._ilosc_osob }}</label>
+    <label><span class="info">Maks. ilość osób: </span>{{ event._max_ilosc_osob }}</label>
+    <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia }}</label>
+    <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia }}</label>
+    <label><span class="info">Cena biletu: </span>{{ event._cena_biletu }} zł</label>
+  </div>
+  <router-outlet></router-outlet>
+</main>

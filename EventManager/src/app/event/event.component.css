@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: fit-content;
   text-align: left;
   border-width: 3px;
   border-style: solid;
@@ -23,6 +22,7 @@
   flex-direction: column;
   font-family: "Century Gothic", serif;
   position: relative;
+  align-items: center;
 }
 
 .info {
@@ -42,11 +42,14 @@
 .mainContainer {
   margin-inline: auto;
   min-width: 49.8vw;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .controlContainer {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .searchContainer {

@@ -10,5 +10,9 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
   styleUrl: './add-event.component.css'
 })
 export class AddEventComponent {
+  constructor(private router: Router) {}
 
+  back(): void {
+    this.router.navigate(['/']);
+  }
 }

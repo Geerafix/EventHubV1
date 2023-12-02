@@ -11,10 +11,8 @@ export class SearchEventPipe implements PipeTransform {
     if (!value || !searchValue) {
       return value;
     }
-
     return value.filter((event) => {
       let searchByField;
-
       if (searchBy === 'nazwa') {
         searchByField = event._nazwa;
       } else if (searchBy === 'rodzaj') {
@@ -24,7 +22,6 @@ export class SearchEventPipe implements PipeTransform {
       } else if (searchBy === 'miejsce') {
         searchByField = event._miejsce;
       }
-
       return searchByField && searchByField.toString().toLowerCase().includes(searchValue.toLowerCase());
     });
   }
