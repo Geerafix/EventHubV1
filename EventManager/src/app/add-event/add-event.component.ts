@@ -24,19 +24,14 @@ export class AddEventComponent {
   data_zakonczenia!: Date;
   cena_biletu!: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
-    this.eventDataSerice.data$.subscribe((data) => {
-        this.eventList = data;
-      }
-    );
+  constructor(private router: Router, private eventDataSerice: EventDataService) {
+    this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
   }
 
-  back(): void {
-    this.router.navigate(['/']);
-  }
+  back(): void { this.router.navigate(['/']); }
 
-  addEventToEventList(){
-    this.eventList.push(new Event(this.eventList.length,
+  addEventToEventList(): void {
+    this.eventList.push(new Event(this.eventList.length + 1,
                                   this.nazwa,
                                   this.rodzaj,
                                   this.organizator,

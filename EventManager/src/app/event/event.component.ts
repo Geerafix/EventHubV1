@@ -19,8 +19,8 @@ export class EventComponent implements OnInit {
   eventList: Event[] = [];
   search: string = "";
   searchBy: string = 'nazwa';
-  startDate!: string;
-  endDate!: string;
+  startDate: string = "";
+  endDate: string = "";
 
   constructor(private router: Router, private eventDataService: EventDataService) {
     this.eventList.push(new Event(1, "Przedstawienie teatralne", "Rodzaj1", "Organizator1", "Białystok", 100, 200, new Date('2023-02-15'), new Date('2023-02-15'), 50));
@@ -37,11 +37,21 @@ export class EventComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventDataService.send(this.eventList);
+    this.startDate = "";
+    this.endDate= "";
   }
 
   isAddEvent(): boolean { return this.router.url.startsWith('/dodaj-wydarzenie'); }
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
 
-  addEvent() { this.router.navigate(['/dodaj-wydarzenie']); }
-  showEventDetails(event: Event): void { this.router.navigate(['/szczegoly', event._id]); }
+  addEvent() {
+    this.router.navigate(['/dodaj-wydarzenie']);
+    this.startDate = "";
+    this.endDate = "";
+  }
+  showEventDetails(event: Event): void {
+    this.router.navigate(['/szczegoly', event._id]);
+    this.startDate = "";
+    this.endDate = "";
+  }
 }

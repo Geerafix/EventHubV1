@@ -14,7 +14,7 @@ export class EventDataService {
       this.data$ = this.dataSubject.asObservable();
   }
 
-  send(eventList: Event[]) {
-      this.dataSubject.next(eventList);
+  send(eventList: Event[]): void {
+    this.dataSubject.next(eventList);
   }
 }

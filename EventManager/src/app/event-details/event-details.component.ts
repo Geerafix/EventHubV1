@@ -17,10 +17,7 @@ export class EventDetailsComponent implements OnInit {
   private eventId!: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
-    this.eventDataSerice.data$.subscribe((data) => {
-        this.eventList = data;
-      }
-    );
+    this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
   }
 
   ngOnInit(): void {
