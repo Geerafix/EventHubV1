@@ -37,8 +37,6 @@ export class EventComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventDataService.send(this.eventList);
-    this.startDate = "";
-    this.endDate= "";
   }
 
   isAddEvent(): boolean { return this.router.url.startsWith('/dodaj-wydarzenie'); }
@@ -49,6 +47,7 @@ export class EventComponent implements OnInit {
     this.startDate = "";
     this.endDate = "";
   }
+
   showEventDetails(event: Event): void {
     this.router.navigate(['/szczegoly', event._id]);
     this.startDate = "";

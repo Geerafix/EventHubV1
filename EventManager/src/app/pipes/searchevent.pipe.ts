@@ -3,8 +3,7 @@ import { Event } from '../models/Event';
 
 @Pipe({
   name: 'searchevent',
-  pure: false,
-  standalone: true
+  standalone: true,
 })
 export class SearchEventPipe implements PipeTransform {
   transform(value: Event[], searchValue: string, searchBy: string): Event[] {
