@@ -4,7 +4,6 @@ import { EventComponent } from './event/event.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { BuyTicketComponent } from './buy-ticket/buy-ticket.component';
 
-
 export const routes: Routes = [
     { path: 'dodaj-wydarzenie', component: AddEventComponent },
     { path: 'szczegoly/:id', component: EventDetailsComponent },

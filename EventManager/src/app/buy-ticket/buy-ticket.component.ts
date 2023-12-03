@@ -2,7 +2,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet, RouterLinkActive, ActivatedRoute} from '@angular/router';
-import { EventDataService } from '../service/event-data.service';
+import { EventDataService } from '../services/event-data.service';
 import { Event } from '../models/Event';
 import { ValidDateDirective } from '../directives/valid-date.directive';
 

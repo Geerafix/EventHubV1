@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SearchPipe } from "../pipes/search.pipe";
 import { AddEventComponent } from '../add-event/add-event.component';
-import { EventDataService } from '../service/event-data.service';
+import { EventDataService } from '../services/event-data.service';
 import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
 
 @Component({

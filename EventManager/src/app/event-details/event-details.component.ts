@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../models/Event';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
-import { EventDataService } from '../service/event-data.service';
+import { EventDataService } from '../services/event-data.service';
 
 @Component({
   selector: 'app-event-details',
