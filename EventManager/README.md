@@ -114,13 +114,15 @@ Wymagania:
 
 * - typy TypeScript (czy każda zmienna ma przyporządkowany typ) - 1pkt
 
-- zaawansowane elementy TypeScript (jeden z wymienionych): - 2pkt
+* - zaawansowane elementy TypeScript (jeden z wymienionych): - 2pkt
+  
   klasy pochodne TypeScript (czy wykorzystano również klasy pochodne) ,
-  getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)+parametry opcjonalne metod (czy są i czy właściwie dobrane)+modyfikatory dostępu w konstruktorze.
+  
+  getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)
+    +parametry opcjonalne metod (czy są i czy właściwie dobrane)
+    +modyfikatory dostępu w konstruktorze.
 
-* - wykorzystanie formularzy, min. 5 elementów (czy właściwie wybrano dane do wprowadzania i dobrano rodzaj elementu formularza, czy nie ma 
-
-- dwustronnego wiązania danych w szablonie - 1pkt
+* - wykorzystanie formularzy, min. 5 elementów (czy właściwie wybrano dane do wprowadzania i dobrano rodzaj elementu formularza, czy nie ma        dwustronnego wiązania danych w szablonie - 1pkt
 
 - walidacja danych wprowadzanych przez użytkownika ( w każdym przypadku wprowadzania danych, czy odpowiednio dobrano walidatory) -2pkt,
 

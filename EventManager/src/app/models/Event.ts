@@ -1,3 +1,5 @@
+import { Plan } from "./Plan";
+
 export class Event {
   private id: number;
   private nazwa: string;
@@ -8,7 +10,7 @@ export class Event {
   private max_ilosc_osob: number;
   private data_rozpoczecia: Date;
   private data_zakonczenia: Date;
-  // private plan: Plan[];
+  private plan: Plan[] = [];
   private cena_biletu: number;
 
   constructor(id: number,
@@ -31,7 +33,7 @@ export class Event {
     this.max_ilosc_osob = max_ilosc_osob;
     this.data_rozpoczecia = data_rozpoczecia;
     this.data_zakonczenia = data_zakonczenia;
-    /* this.plan = plan; */
+    // this.plan = plan;
     this.cena_biletu = cena_biletu;
   }
 
@@ -62,8 +64,8 @@ export class Event {
   get _data_zakonczenia(): Date { return this.data_zakonczenia; }
   set _data_zakonczenia(value: Date) { this.data_zakonczenia = value; }
 
-  // get plan(): Plan[] { return this._plan; }
-  // set plan(value: Plan[]) { this._plan = value; }
+  get _plan(): Plan[] { return this.plan; }
+  set _plan(value: Plan[]) { this.plan = value; }
 
   get _cena_biletu(): number { return this.cena_biletu; }
   set _cena_biletu(cena_biletu: number) { this.cena_biletu = cena_biletu; }
