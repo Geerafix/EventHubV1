@@ -25,8 +25,8 @@ p  {
   font-size: 4.5vw;
   color: rgba(212, 245, 243, 0.937);
   padding: 10px;
-  margin-block-start: -15px;
-  margin-block-end: -5px;
+  margin-block-start: -20px;
+  margin-block-end: -10px;
   user-select: none;
 }
 

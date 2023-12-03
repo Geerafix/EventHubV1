@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-#event-form-container {
+#buy-ticket-form-container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -54,6 +54,10 @@ main > button:nth-child(1) {
 input:focus {
   cursor: text;
   outline: none;
+}
+
+#buy-ticket-form-container > input:nth-child(4) {
+  cursor: pointer;
 }
 
 button:hover {

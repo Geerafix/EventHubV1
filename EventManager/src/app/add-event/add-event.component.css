@@ -23,6 +23,10 @@
 
 }
 
+#event-form-container > input:nth-child(7), :nth-child(8) {
+  cursor: pointer;
+}
+
 input {
   font-weight: bold;
   color: #14424b;

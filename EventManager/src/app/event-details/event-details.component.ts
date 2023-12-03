@@ -13,8 +13,8 @@ import { EventDataService } from '../service/event-data.service';
 })
 export class EventDetailsComponent implements OnInit {
   public eventList: Event[] = [];
-  event: Event | undefined;
   private id!: number;
+  event: Event | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
     this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
@@ -23,7 +23,7 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
     this.event = this.eventList.find((event) => event._id === this.id);
-  };
+  }
 
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
   isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }

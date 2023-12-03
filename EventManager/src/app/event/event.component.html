@@ -8,9 +8,9 @@
           <option value="rodzaj">Rodzaj</option>
           <option value="miejsce">Miejsce</option>
         </select>
-        <input [(ngModel)]="startDate" placeholder="Od" type="text" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" class="date">
-        <input [(ngModel)]="endDate" placeholder="Do" type="text" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" class="date">
-        <button (click)="clearPipe()" id="clear-btn">
+        <input [(ngModel)]="startDate" placeholder="Data rozp." type="text" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" class="date">
+        <input [(ngModel)]="endDate" placeholder="Data zak." type="text" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" class="date">
+        <button (click)="clearPipe()" id="clear-btn" *ngIf="search != '' || searchBy != 'nazwa'  || startDate != '' || endDate!= ''">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16"><path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/></svg>
         </button>
       </div>
@@ -19,7 +19,7 @@
         </button>
     </div>
     <div id="eventData" *ngFor="let event of eventList | search: search:searchBy | searchByDate: startDate:endDate">
-      <label class="title">{{ event._nazwa }}</label>
+      <h2 class="title">{{ event._nazwa }}</h2>
       <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
       <label><span class="info">Miejsce: </span>{{ event._miejsce }}</label>
       <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia | date: 'dd-MM-yyyy' }}</label>
@@ -30,13 +30,7 @@
       </div>
     </div>
   </div>
-  <div class="main-container" *ngIf="isAddEvent()">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="main-container" *ngIf="isEventDetails()">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="main-container" *ngIf="isBuyTicket()">
+  <div class="main-container" *ngIf="isAddEvent() || isBuyTicket() || isEventDetails()">
     <router-outlet></router-outlet>
   </div>
 </main>

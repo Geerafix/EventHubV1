@@ -17,7 +17,6 @@ export class SearchByDatePipe implements PipeTransform {
     return value.filter(event => {
       const eventStart = new Date(event._data_rozpoczecia);
       const eventEnd = new Date(event._data_zakonczenia);
-
       return eventStart >= start && eventEnd <= end;
     });
   }

@@ -7,16 +7,16 @@
   <div class="form-container">
     <form id="event-form-container" [formGroup]="eventForm" (ngSubmit)="addEventToEventList()">
       <label>Formularz dodawania wydarzenia</label>
-      <input formControlName="nazwa" placeholder="Nazwa wydarzenia" ngmodel required>
-      <input formControlName="rodzaj" placeholder="Rodzaj wydarzenia" ngmodel required>
-      <input formControlName="organizator" placeholder="Organizator wydarzenia" ngmodel required>
-      <input formControlName="miejsce" placeholder="Miejsce wydarzenia" ngmodel required>
-      <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób" ngmodel required>
-      <input formControlName="data_rozpoczecia" type="date" placeholder="Data rozpoczęcia" ngmodel required>
-      <input formControlName="data_zakonczenia" type="date" placeholder="Data zakończenia" ngmodel required>
-      <input formControlName="cena_biletu" type="number" placeholder="Cena biletu" ngmodel required>
+      <input formControlName="nazwa" placeholder="Nazwa wydarzenia" ngModel required>
+      <input formControlName="rodzaj" placeholder="Rodzaj wydarzenia" ngModel required>
+      <input formControlName="organizator" placeholder="Organizator wydarzenia" ngModel required>
+      <input formControlName="miejsce" placeholder="Miejsce wydarzenia" ngModel required>
+      <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób" ngModel required>
+      <input formControlName="data_rozpoczecia" type="text" placeholder="Data rozpoczęcia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" ngModel required>
+      <input formControlName="data_zakonczenia" type="text" placeholder="Data zakończenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" ngModel required>
+      <input formControlName="cena_biletu" type="number" placeholder="Cena biletu" ngModel required>
       <button [disabled]="!eventForm.valid" type="submit">Zatwierdź</button>
-      <p style="color: black;">{{ eventForm.valid }}</p>
+      <p style="color: blue; font-size: 20px;">{{ eventForm.valid }}</p>
     </form>
   </div>
 </main>

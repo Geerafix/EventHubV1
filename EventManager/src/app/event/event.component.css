@@ -25,6 +25,10 @@
   align-items: center;
 }
 
+label {
+  font-weight: 100;
+}
+
 .info {
   font-weight: bold;
 }
@@ -129,6 +133,7 @@ select:hover {
 .title {
   margin-inline: auto;
   font-size: 25px;
+  font-weight: bold;
 }
 
 .interact {

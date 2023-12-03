@@ -35,15 +35,15 @@ export class AddEventComponent {
 
   addEventToEventList(): void {
     this.eventList.push(new Event(this.eventList.length + 1,
-                                  this.eventForm.value.nazwa,
-                                  this.eventForm.value.rodzaj,
-                                  this.eventForm.value.organizator,
-                                  this.eventForm.value.miejsce,
-                                  0,
-                                  this.eventForm.value.max_ilosc_osob,
-                                  new Date(this.eventForm.value.data_rozpoczecia),
-                                  new Date(this.eventForm.value.data_zakonczenia),
-                                  this.eventForm.value.cena_biletu));
+                                          this.eventForm.value.nazwa,
+                                          this.eventForm.value.rodzaj,
+                                          this.eventForm.value.organizator,
+                                          this.eventForm.value.miejsce,
+                                          0,
+                                          this.eventForm.value.max_ilosc_osob,
+                                          new Date(this.eventForm.value.data_rozpoczecia),
+                                          new Date(this.eventForm.value.data_zakonczenia),
+                                          this.eventForm.value.cena_biletu));
     this.router.navigate(['/']);
   }
 }
