@@ -28,11 +28,7 @@ export class EventDetailsComponent implements OnInit {
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
   isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
 
-  back(): void {
-    this.router.navigate(['']);
-  }
+  back(): void { this.router.navigate(['']); }
 
-  buyTicket(event: Event): void {
-    this.router.navigate(['/kup-bilet', event._id])
-  }
+  buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]) }
 }

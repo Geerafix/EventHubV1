@@ -38,8 +38,6 @@ export class BuyTicketComponent implements OnInit {
 
   }
 
-  back() {
-    this.router.navigate(['']);
-  }
+  back() { this.router.navigate(['']); }
 }
 
