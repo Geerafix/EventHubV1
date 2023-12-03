@@ -8,9 +8,9 @@
     <form id="buy-ticket-form-container" [formGroup]="buyTicketForm" (ngSubmit)="buyTicket()">
       <label style="font-size: 20px;">Formularz kupowania biletu na: </label>
       <label style="font-size: 18px;">{{ event?._nazwa }}</label>
-      <input formControlName="imie" type="text" placeholder="Imię" ngModel required>
-      <input formControlName="nazwisko" type="text" placeholder="Nazwisko" ngModel required>
-      <input formControlName="data_urodzenia" type="text" placeholder="Data urodzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" ngModel required>
+      <input formControlName="imie" type="text" placeholder="Imię" ngModel required minlength="3" maxlength="20">
+      <input formControlName="nazwisko" type="text" placeholder="Nazwisko" ngModel required minlength="3" maxlength="20">
+      <input formControlName="data_urodzenia" validDateBirth type="text" placeholder="Data urodzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" ngModel required>
       <input formControlName="email" type="email" placeholder="E-mail" ngModel required email>
       <input formControlName="nr_telefonu" type="number" placeholder="Numer telefonu" ngModel required>
       <button [disabled]="!buyTicketForm.valid" type="submit">Zatwierdź</button>

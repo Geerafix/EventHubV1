@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet, RouterLinkActive, ActivatedRoute} from '@angular/router';
 import { EventDataService } from '../service/event-data.service';
 import { Event } from '../models/Event';
+import { ValidDateDirective } from '../directives/valid-date.directive';
 
 @Component({
   selector: 'app-buy-ticket',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet, RouterLinkActive, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, RouterLink, RouterOutlet, RouterLinkActive, ReactiveFormsModule, ValidDateDirective],
   templateUrl: './buy-ticket.component.html',
   styleUrl: './buy-ticket.component.css'
 })

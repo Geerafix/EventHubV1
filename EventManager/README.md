@@ -116,9 +116,9 @@ Wymagania:
 
 * - zaawansowane elementy TypeScript (jeden z wymienionych): - 2pkt
   
-  klasy pochodne TypeScript (czy wykorzystano również klasy pochodne) ,
+  - klasy pochodne TypeScript (czy wykorzystano również klasy pochodne) ,
   
-  getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)
+  - getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)
     +parametry opcjonalne metod (czy są i czy właściwie dobrane)
     +modyfikatory dostępu w konstruktorze.
 
@@ -136,9 +136,9 @@ Wymagania:
 
 - dodatkowy serwis (a)synchroniczny - 1pkt
 
-- własna dyrektywa - 1pkt
+* - własna dyrektywa - 1pkt
 
-- wykorzystanie dowolnego filtru standardowego w szablonie  - 1pkt
+* - wykorzystanie dowolnego filtru standardowego w szablonie  - 1pkt
 
 * - implementacja własnego filtru - 2pkt
 
