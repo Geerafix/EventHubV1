@@ -6,16 +6,17 @@
   </button>
   <div class="form-container">
     <form id="event-form-container" [formGroup]="eventForm" (ngSubmit)="addEventToEventList()">
-      <label style="font-size: 20px;">Formularz dodawania wydarzenia</label>
-      <input placeholder="Nazwa wydarzenia" ngmodel required>
-      <input placeholder="Rodzaj wydarzenia" ngmodel required>
-      <input placeholder="Organizator wydarzenia" ngmodel required>
-      <input placeholder="Miejsce wydarzenia" ngmodel required>
-      <input type="number" placeholder="Maks. ilość osób" ngmodel required>
-      <input type="date" placeholder="Data rozpoczęcia" ngmodel required>
-      <input type="date" placeholder="Data zakończenia" ngmodel required>
-      <input type="number" placeholder="Cena biletu" ngmodel required>
+      <label>Formularz dodawania wydarzenia</label>
+      <input formControlName="nazwa" placeholder="Nazwa wydarzenia" ngmodel required>
+      <input formControlName="rodzaj" placeholder="Rodzaj wydarzenia" ngmodel required>
+      <input formControlName="organizator" placeholder="Organizator wydarzenia" ngmodel required>
+      <input formControlName="miejsce" placeholder="Miejsce wydarzenia" ngmodel required>
+      <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób" ngmodel required>
+      <input formControlName="data_rozpoczecia" type="date" placeholder="Data rozpoczęcia" ngmodel required>
+      <input formControlName="data_zakonczenia" type="date" placeholder="Data zakończenia" ngmodel required>
+      <input formControlName="cena_biletu" type="number" placeholder="Cena biletu" ngmodel required>
       <button [disabled]="!eventForm.valid" type="submit">Zatwierdź</button>
+      <p style="color: black;">{{ eventForm.valid }}</p>
     </form>
   </div>
 </main>
