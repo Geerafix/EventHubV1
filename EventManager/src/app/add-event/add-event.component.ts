@@ -18,7 +18,7 @@ export class AddEventComponent {
   eventForm!: FormGroup;
 
   constructor(private router: Router, private eventDataSerice: EventDataService) {
-    this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
+    this.eventList = eventDataSerice.getEvents();
     this.eventForm = new FormGroup({
       nazwa: new FormControl(),
       rodzaj: new FormControl(),

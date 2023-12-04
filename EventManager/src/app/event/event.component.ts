@@ -23,20 +23,10 @@ export class EventComponent implements OnInit {
   endDate: string = '';
 
   constructor(private router: Router, private eventDataService: EventDataService) {
-    this.eventList.push(new Event(1, "Przedstawienie teatralne", "Rodzaj1", "Organizator1", "Białystok", 100, 200, new Date('2023-02-15'), new Date('2023-02-15'), 50));
-    this.eventList.push(new Event(2, "Koncert muzyczny", "Rodzaj2", "Organizator2", "Warszawa", 120, 250, new Date('2023-03-10'), new Date('2023-03-10'), 80));
-    this.eventList.push(new Event(3, "Wystawa sztuki", "Rodzaj3", "Organizator3", "Poznań", 80, 180, new Date('2023-04-05'), new Date('2023-04-05'), 30));
-    this.eventList.push(new Event(4, "Konferencja naukowa", "Rodzaj4", "Organizator4", "Kraków", 200, 350, new Date('2023-05-20T09:00:00'), new Date('2023-05-20'), 150));
-    this.eventList.push(new Event(5, "Pokaz filmowy", "Rodzaj5", "Organizator5", "Władysławowo", 90, 150, new Date('2023-06-15'), new Date('2023-06-15'), 60));
-    this.eventList.push(new Event(6, "Warsztaty kulinarne", "Rodzaj6", "Organizator6", "Pruszków", 60, 100, new Date('2023-07-08'), new Date('2023-07-08'), 25));
-    this.eventList.push(new Event(7, "Sesja fotograficzna", "Rodzaj7", "Organizator7", "Świnoujście", 110, 220, new Date('2023-08-03'), new Date('2023-08-03'), 45));
-    this.eventList.push(new Event(8, "Występ stand-upowy", "Rodzaj8", "Organizator8", "Rewal", 70, 120, new Date('2023-09-18'), new Date('2023-09-18'), 40));
-    this.eventList.push(new Event(9, "Pokaz mody", "Rodzaj9", "Organizator9", "Zakopane", 85, 160, new Date('2023-10-12'), new Date('2023-10-12'), 55));
-    this.eventList.push(new Event(10, "Festiwal kulinarny", "Rodzaj10", "Organizator10", "Wasilków", 150, 300, new Date('2023-11-25'), new Date('2023-11-25'), 100));
+    this.eventList = eventDataService.getEvents();
   }
 
   ngOnInit(): void {
-    this.eventDataService.send(this.eventList);
     this.eventList.sort((a, b) => b._data_zakonczenia.getTime() - a._data_rozpoczecia.getTime());
   }
 
@@ -49,11 +39,12 @@ export class EventComponent implements OnInit {
   }
 
   showEventDetails(event: Event): void {
+
     this.router.navigate(['/szczegoly', event._id]);
   }
 
   buyTicket(event: Event): void {
-    this.router.navigate(['/kup-bilet', event._id])
+    this.router.navigate(['/kup-bilet', event._id]);
   }
 
   clearPipe() {

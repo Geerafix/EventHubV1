@@ -136,7 +136,7 @@ Wymagania:
 
 - dodatkowy serwis (a)synchroniczny - 1pkt
 
-* - własna dyrektywa - 1pkt
+- własna dyrektywa - 1pkt
 
 * - wykorzystanie dowolnego filtru standardowego w szablonie  - 1pkt
 

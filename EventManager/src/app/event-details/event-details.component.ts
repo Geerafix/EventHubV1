@@ -17,7 +17,7 @@ export class EventDetailsComponent implements OnInit {
   event: Event | undefined;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
-    this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
+    this.eventList = eventDataSerice.getEvents();
   }
 
   ngOnInit(): void {

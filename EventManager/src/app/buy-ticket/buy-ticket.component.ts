@@ -15,12 +15,10 @@ import { ValidDateDirective } from '../directives/valid-date.directive';
 })
 export class BuyTicketComponent implements OnInit {
   buyTicketForm: FormGroup;
-  eventList: Event[] = [];
   event: Event | undefined;
   id!: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService ) {
-    this.eventDataSerice.data$.subscribe((data) => { this.eventList = data; });
+  constructor(private router: Router, private route: ActivatedRoute, private eventDataService: EventDataService ) {
     this.buyTicketForm = new FormGroup({
       imie: new FormControl(),
       nazwisko: new FormControl(),
@@ -32,7 +30,7 @@ export class BuyTicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
-    this.event = this.eventList.find((event) => event._id === this.id);
+    this.event = this.eventDataService.getEvent(this.id);
   }
 
   buyTicket(): void {
