@@ -7,13 +7,24 @@ import { SearchPipe } from "../pipes/search.pipe";
 import { AddEventComponent } from '../add-event/add-event.component';
 import { EventDataService } from '../services/event-data.service';
 import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
+import { ScaleDirective } from '../directives/scale.directive';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
     selector: 'app-event',
     standalone: true,
     templateUrl: './event.component.html',
     styleUrl: './event.component.css',
-    imports: [CommonModule, FormsModule, SearchPipe, SearchByDatePipe, RouterLink, RouterOutlet, RouterLinkActive, AddEventComponent]
+    imports: [CommonModule,
+              FormsModule,
+              SearchPipe,
+              SearchByDatePipe,
+              RouterLink,
+              RouterOutlet,
+              RouterLinkActive,
+              AddEventComponent,
+              ScaleDirective,
+              HighlightDirective]
 })
 export class EventComponent implements OnInit {
   eventList: Event[] = [];

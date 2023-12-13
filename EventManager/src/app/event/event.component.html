@@ -14,15 +14,15 @@
       </div>
         <button id="add-event-button" (click)="addEvent()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg></button>
     </div>
-    <div id="eventData" *ngFor="let event of eventList | search: search:searchBy | searchByDate: startDate:endDate">
+    <div highlight scale [_scale]="1.05" id="eventData" *ngFor="let event of eventList | search: search:searchBy | searchByDate: startDate:endDate">
       <h2 class="title">{{ event._nazwa }}</h2>
       <label><span class="info">Rodzaj: </span>{{ event._rodzaj }}</label>
       <label><span class="info">Miejsce: </span>{{ event._miejsce }}</label>
       <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia | date: 'dd-MM-yyyy' }}</label>
       <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia | date: 'dd-MM-yyyy' }}</label>
       <div class="interact">
-        <a (click)="showEventDetails(event)" id="info">Sczegóły</a>
-        <a (click)="buyTicket(event)">Kup bilet</a>
+        <a scale [_scale]="1.1" (click)="showEventDetails(event)" id="info">Sczegóły</a>
+        <a scale [_scale]="1.1" (click)="buyTicket(event)">Kup bilet</a>
       </div>
     </div>
   </div>

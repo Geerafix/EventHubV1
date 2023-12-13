@@ -3,18 +3,21 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../models/Event';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
+import { PlanComponent } from '../plan/plan.component';
+import { Plan } from '../models/Plan';
 
 @Component({
   selector: 'app-event-details',
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive]
+  imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive, PlanComponent]
 })
 export class EventDetailsComponent implements OnInit {
   public eventList: Event[] = [];
-  private id!: number;
-  event: Event | undefined;
+  public eventPlan: Plan[] | undefined;
+  public event: Event | undefined;
+  public id!: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
     this.eventList = eventDataSerice.getEvents();
@@ -23,6 +26,10 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
     this.event = this.eventList.find((event) => event._id === this.id);
+
+    if (this.event) {
+      this.eventPlan = this.event._plan;
+    }
   }
 
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }

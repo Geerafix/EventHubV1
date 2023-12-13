@@ -7,37 +7,37 @@
   <div class="form-container">
     <form id="event-form-container" [formGroup]="eventForm" (ngSubmit)="addEventToEventList()">
       <label>Formularz dodawania wydarzenia</label>
-      <input formControlName="nazwa" placeholder="Nazwa wydarzenia" ngModel required minlength="5" maxlength="30">
+      <input formControlName="nazwa" placeholder="Nazwa wydarzenia">
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['required']">Nazwa wydarzenia jest wymagana</div>
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['minlength']">Nazwa wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['maxlength']">Nazwa wydarzenia może mieć maks. 30 znaków</div>
 
-      <input formControlName="rodzaj" placeholder="Rodzaj wydarzenia" ngModel required minlength="5" maxlength="30">
+      <input formControlName="rodzaj" placeholder="Rodzaj wydarzenia">
         <div class="error" *ngIf="eventForm.controls['rodzaj'].errors?.['required']">Rodzaj wydarzenia jest wymagany</div>
         <div class="error" *ngIf="eventForm.controls['rodzaj'].errors?.['minlength']">Rodzaj wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['rodzaj'].errors?.['maxlength']">Rodzaj wydarzenia może mieć maks. 30 znaków</div>
 
-      <input formControlName="organizator" placeholder="Organizator wydarzenia" ngModel required minlength="3" maxlength="50">
+      <input formControlName="organizator" placeholder="Organizator wydarzenia">
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['required']">Organizator wydarzenia jest wymagany</div>
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['minlength']">Organizator wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['maxlength']">Organizator wydarzenia może mieć maks. 20 znaków</div>
 
-      <input formControlName="miejsce" placeholder="Miejsce wydarzenia" ngModel required minlength="0" maxlength="30">
+      <input formControlName="miejsce" placeholder="Miejsce wydarzenia">
         <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['required']">Miejsce wydarzenia jest wymagane</div>
         <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['minlength']">Miejsce wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['maxlength']">Miejsce wydarzenia może mieć maks. 30 znaków</div>
 
-      <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób" ngModel required max="999">
+      <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób">
         <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['required']">Maks. ilość osób wydarzenia jest wymagana</div>
         <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['max']">Wydarzenie może mieć maks. liczbę 999 osób</div>
 
-      <input formControlName="data_rozpoczecia" type="text" placeholder="Data rozpoczęcia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" ngModel required>
+      <input formControlName="data_rozpoczecia" type="text" placeholder="Data rozpoczęcia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
         <div class="error" *ngIf="eventForm.controls['data_rozpoczecia'].errors?.['required']">Data rozpoczęcia jest wymagana</div>
 
-      <input formControlName="data_zakonczenia" type="text" placeholder="Data zakończenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')" ngModel required>
+      <input formControlName="data_zakonczenia" type="text" placeholder="Data zakończenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
         <div class="error" *ngIf="eventForm.controls['data_zakonczenia'].errors?.['required']">Data zakończenia jest wymagana</div>
 
-      <input formControlName="cena_biletu" type="number" placeholder="Cena biletu" ngModel required max="999">
+      <input formControlName="cena_biletu" type="number" placeholder="Cena biletu">
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['required']">Cena biletu jest wymagana</div>
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['max']">Cena bletu może wynosić maks. 999 zł</div>
 

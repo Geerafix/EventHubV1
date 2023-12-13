@@ -14,6 +14,6 @@ export class Plan {
   get _godz_rozpoczecia(): Date { return this.godz_rozpoczecia; }
   set _godz_rozpoczecia(value: Date) { this.godz_rozpoczecia = value; }
 
-  get _godz_zakonczenia(): Date { return this._godz_zakonczenia; }
-  set _godz_zakonczenia(value: Date) { this._godz_zakonczenia = value; }
+  get _godz_zakonczenia(): Date { return this.godz_zakonczenia; }
+  set _godz_zakonczenia(value: Date) { this.godz_zakonczenia = value; }
 }

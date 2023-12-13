@@ -22,7 +22,7 @@ export class Event {
               max_ilosc_osob: number,
               data_rozpoczecia: Date,
               data_zakonczenia: Date,
-              /* plan: Plan[], */
+              plan: Plan[],
               cena_biletu: number) {
     this.id = id;
     this.nazwa = nazwa;
@@ -33,7 +33,7 @@ export class Event {
     this.max_ilosc_osob = max_ilosc_osob;
     this.data_rozpoczecia = data_rozpoczecia;
     this.data_zakonczenia = data_zakonczenia;
-    // this.plan = plan;
+    this.plan = plan;
     this.cena_biletu = cena_biletu;
   }
 
