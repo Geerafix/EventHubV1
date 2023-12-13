@@ -1,3 +1,3 @@
-<div *ngFor="let plan of eventPlan">
-  <label>{{ plan._nazwa }}: {{ plan._godz_rozpoczecia | date: 'HH:mm dd-MM-yyyy' }} - {{ plan._godz_zakonczenia | date: 'HH:mm dd-MM-yyyy' }}</label>
+<div *ngFor="let plan of eventPlan, let i = index">
+  <label>{{ i + 1 }}. {{ plan._nazwa }}: {{ plan._godz_rozpoczecia | date: 'HH:mm dd-MM-yyyy' }} - {{ plan._godz_zakonczenia | date: 'HH:mm dd-MM-yyyy' }}</label>
 </div>
