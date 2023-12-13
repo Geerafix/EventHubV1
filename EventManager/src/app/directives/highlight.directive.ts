@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
   standalone: true
 })
 export class HighlightDirective {
-  @Input() _color: string = 'white';
+  @Input() _color: string = '#f7f7e4';
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
     this.renderer.setStyle(this.el.nativeElement, 'transition', '0.15s');
