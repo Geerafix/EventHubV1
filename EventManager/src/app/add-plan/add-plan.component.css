@@ -39,6 +39,7 @@ input:focus {
   cursor: text;
   border: none;
   outline: none;
+  max-height: 40px;
 }
 
 .error {
