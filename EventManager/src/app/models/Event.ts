@@ -69,20 +69,4 @@ export class Event {
 
   get _cena_biletu(): number { return this.cena_biletu; }
   set _cena_biletu(cena_biletu: number) { this.cena_biletu = cena_biletu; }
-
-  startDateToString(): string {
-    return this.data_rozpoczecia.toLocaleDateString('en-CA', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-   });
-  }
-
-  endDateToString(): string {
-    return this.data_zakonczenia.toLocaleDateString('en-CA', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-  }
 }

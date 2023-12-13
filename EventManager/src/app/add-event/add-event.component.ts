@@ -4,14 +4,16 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 import { EventDataService } from '../services/event-data.service';
 import { Event } from '../models/Event';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AddPlanComponent } from '../add-plan/add-plan.component';
 
 @Component({
   selector: 'app-add-event',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet, FormsModule, ReactiveFormsModule, AddPlanComponent],
   templateUrl: './add-event.component.html',
   styleUrl: './add-event.component.css'
 })
+
 export class AddEventComponent {
   eventList: Event[] = [];
   event!: Event;

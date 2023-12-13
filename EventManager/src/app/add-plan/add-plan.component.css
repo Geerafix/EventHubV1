@@ -1,0 +1,52 @@
+li {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  margin-block: 10px;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+input, button {
+  font-weight: bold;
+  color: #14424b;
+  padding: 10px;
+  border-radius: 20px;
+  border-style: none;
+  background-color: aliceblue;
+  box-shadow: 0px 0px 7px 0.01px rgba(81, 81, 81, 0.288), inset 0 0 1px 0.01px #1038404e;
+  width: 150px;
+  margin-left: 15px;
+  transition: 0.2s;
+}
+
+button {
+  width: 40px;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0px 0px 10px 0.05px rgb(162, 152, 151);
+}
+
+input:focus {
+  cursor: text;
+  border: none;
+  outline: none;
+}
+
+.error {
+  color: red;
+  margin-block: 10px 0px;
+}
+
+.delete-button {
+  background-color:  rgb(218, 143, 143);
+}
+
