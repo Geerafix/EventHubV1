@@ -20,7 +20,7 @@
       <input formControlName="organizator" placeholder="Organizator wydarzenia">
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['required']">Organizator wydarzenia jest wymagany</div>
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['minlength']">Organizator wydarzenia musi mieć min. 5 znaków</div>
-        <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['maxlength']">Organizator wydarzenia może mieć maks. 20 znaków</div>
+        <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['maxlength']">Organizator wydarzenia może mieć maks. 30 znaków</div>
 
       <input formControlName="miejsce" placeholder="Miejsce wydarzenia">
         <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['required']">Miejsce wydarzenia jest wymagane</div>
@@ -33,6 +33,7 @@
 
       <input formControlName="data_wydarzenia" type="text" placeholder="Data wydarzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
         <div class="error" *ngIf="eventForm.controls['data_wydarzenia'].errors?.['required']">Data wydarzenia jest wymagana</div>
+        <div class="error" *ngIf="eventForm.controls['data_wydarzenia'].errors?.['validEventDate']">Data wydarzenia nie może być wcześniejsza niż dzisiejsza</div>
 
       <input formControlName="cena_biletu" type="number" placeholder="Cena biletu">
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['required']">Cena biletu jest wymagana</div>

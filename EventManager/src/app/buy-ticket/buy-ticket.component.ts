@@ -19,7 +19,10 @@ export class BuyTicketComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataService: EventDataService ) {
     this.buyTicketForm = new FormGroup({
-      imie: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      imie: new FormControl('', [Validators.required,
+                                 Validators.minLength(3),
+                                 Validators.maxLength(20),
+                                 Validators.pattern(/^[A-Za-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ][a-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ]*$/)]),
       nazwisko: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       data_urodzenia: new FormControl('', [Validators.required, this.validBirthDate]),
       email: new FormControl('', [Validators.required, this.validEmail]),

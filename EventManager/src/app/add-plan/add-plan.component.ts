@@ -21,7 +21,7 @@ export class AddPlanComponent {
 
   constructor() {
     this.planForm = new FormGroup({
-      nazwa: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+      nazwa: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
       godz_rozpoczecia: new FormControl('', [Validators.required, this.validStartHour]),
       godz_zakonczenia: new FormControl('', [Validators.required, this.validEndHour]),
     });
@@ -49,7 +49,7 @@ export class AddPlanComponent {
   validEndHour(control: AbstractControl): { [key: string]: any } | null {
     // const godz_zakonczenia = control.get('godz_zakonczenia');
 
-    // if (godz_zakonczenia && control.value < godz_zakonczenia.value) {
+    // if (new Date(control.value) < new Date(this.planForm.value.godz_rozpoczecia)) {
     //   return { 'validStartHour': true };
     // }
     return null;

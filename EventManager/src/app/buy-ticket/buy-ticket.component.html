@@ -10,12 +10,12 @@
       <label style="font-size: 18px;">{{ event?._nazwa }}</label>
       <input formControlName="imie" type="text" placeholder="Imię">
         <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['required']">Imię jest wymagane</div>
-        <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['minlength']">Imię musi mieć min. 5 znaków</div>
+        <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['minlength']">Imię musi mieć min. 3 znaki</div>
         <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['maxlength']">Imię może mieć maks. 30 znaków</div>
 
       <input formControlName="nazwisko" type="text" placeholder="Nazwisko">
         <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['required']">Nazwisko jest wymagane</div>
-        <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['minlength']">Nazwisko musi mieć min. 5 znaków</div>
+        <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['minlength']">Nazwisko musi mieć min. 3 znaki</div>
         <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['maxlength']">Nazwisko może mieć maks. 30 znaków</div>
 
       <input formControlName="data_urodzenia" type="text" placeholder="Data urodzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
@@ -33,6 +33,6 @@
 
       <button [disabled]="!buyTicketForm.valid" type="submit">Zatwierdź</button>
       <!-- <p style="color: blue; font-size: 20px;">{{ buyTicketForm.valid }}</p> -->
-    </form> 
+    </form>
   </div>
 </main>
