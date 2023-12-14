@@ -10,10 +10,8 @@
       <label><span class="info">Organizator: </span>{{ event._organizator }}</label>
       <label><span class="info">Ilość osób: </span>{{ event._ilosc_osob }}</label>
       <label><span class="info">Maks. ilość osób: </span>{{ event._max_ilosc_osob }}</label>
-      <label><span class="info">Data rozpoczęcia: </span>{{ event._data_rozpoczecia | date: 'dd-MM-yyyy' }}</label>
-      <label><span class="info">Data zakończenia: </span>{{ event._data_zakonczenia | date: 'dd-MM-yyyy' }}</label>
+      <label><span class="info">Data wydarzenia: </span>{{ event._data_wydarzenia | date: 'dd.MM.yyyy' }}</label>
       <label><span class="info">Cena biletu: </span>{{ event._cena_biletu | currency: 'PLN':'zł' }}</label><br>
-      <label>Plan:</label>
       <app-plan [eventPlan]="eventPlan"></app-plan>
       <a (click)="buyTicket(event)" id="info">Kup bilet</a>
     </div>

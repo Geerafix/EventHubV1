@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Plan } from '../models/Plan';
 
 @Component({
@@ -13,23 +13,45 @@ import { Plan } from '../models/Plan';
 export class AddPlanComponent {
   planForm: FormGroup;
   eventTitle: string | undefined;
-  eventPlan: Plan[] = [];
+  @Input() eventForm: FormGroup | undefined;
+  @Input() eventPlan: Plan[] = [];
+  @Input() start_date: Date | undefined;
+  @Input() end_date: Date | undefined;
   plan: Plan | undefined;
 
   constructor() {
     this.planForm = new FormGroup({
       nazwa: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-      godz_rozpoczecia: new FormControl('', [Validators.required]),
-      godz_zakonczenia: new FormControl('', [Validators.required]),
+      godz_rozpoczecia: new FormControl('', [Validators.required, this.validStartHour]),
+      godz_zakonczenia: new FormControl('', [Validators.required, this.validEndHour]),
     });
   }
 
-  add(event: Event) {
-    this.eventPlan.push(new Plan(this.planForm.value.nazwa, this.planForm.value.godz_rozpoczecia, this.planForm.value.godz_zakonczenia));
-    event?.preventDefault();
+  addPlan() {
+    this.eventPlan.push(new Plan(this.planForm.value.nazwa,
+                                 this.planForm.value.godz_rozpoczecia,
+                                 this.planForm.value.godz_zakonczenia));
   }
 
-  remove(index: number) {
+  removePlan(index: number) {
     this.eventPlan.splice(index, 1);
+  }
+
+  validStartHour(control: AbstractControl): { [key: string]: any } | null {
+    // const godz_rozpoczecia = control.get('godz_rozpoczecia');
+
+    // if (godz_rozpoczecia && control.value < godz_rozpoczecia.value) {
+    //   return { 'validStartHour': true };
+    // }
+    return null;
+  }
+
+  validEndHour(control: AbstractControl): { [key: string]: any } | null {
+    // const godz_zakonczenia = control.get('godz_zakonczenia');
+
+    // if (godz_zakonczenia && control.value < godz_zakonczenia.value) {
+    //   return { 'validStartHour': true };
+    // }
+    return null;
   }
 }

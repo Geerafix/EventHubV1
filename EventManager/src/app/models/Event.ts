@@ -8,8 +8,7 @@ export class Event {
   private miejsce: string;
   private ilosc_osob: number;
   private max_ilosc_osob: number;
-  private data_rozpoczecia: Date;
-  private data_zakonczenia: Date;
+  private data_wydarzenia: Date;
   private plan: Plan[] = [];
   private cena_biletu: number;
 
@@ -20,8 +19,7 @@ export class Event {
               miejsce: string,
               ilosc_osob: number,
               max_ilosc_osob: number,
-              data_rozpoczecia: Date,
-              data_zakonczenia: Date,
+              data_wydarzenia: Date,
               plan: Plan[],
               cena_biletu: number) {
     this.id = id;
@@ -31,8 +29,7 @@ export class Event {
     this.miejsce = miejsce;
     this.ilosc_osob = ilosc_osob;
     this.max_ilosc_osob = max_ilosc_osob;
-    this.data_rozpoczecia = data_rozpoczecia;
-    this.data_zakonczenia = data_zakonczenia;
+    this.data_wydarzenia = data_wydarzenia;
     this.plan = plan;
     this.cena_biletu = cena_biletu;
   }
@@ -58,11 +55,8 @@ export class Event {
   get _max_ilosc_osob(): number { return this.max_ilosc_osob; }
   set _max_ilosc_osob(value: number) { this.max_ilosc_osob = value; }
 
-  get _data_rozpoczecia(): Date { return this.data_rozpoczecia; }
-  set _data_rozpoczecia(value: Date) { this.data_rozpoczecia = value; }
-
-  get _data_zakonczenia(): Date { return this.data_zakonczenia; }
-  set _data_zakonczenia(value: Date) { this.data_zakonczenia = value; }
+  get _data_wydarzenia(): Date { return this.data_wydarzenia; }
+  set _data_wydarzenia(value: Date) { this.data_wydarzenia = value; }
 
   get _plan(): Plan[] { return this.plan; }
   set _plan(value: Plan[]) { this.plan = value; }

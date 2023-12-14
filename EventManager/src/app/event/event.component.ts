@@ -38,7 +38,7 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventList.sort((a, b) => b._data_zakonczenia.getTime() - a._data_rozpoczecia.getTime());
+    this.eventList.sort((a, b) => b._data_wydarzenia.getTime() - a._data_wydarzenia.getTime());
   }
 
   isAddEvent(): boolean { return this.router.url.startsWith('/dodaj-wydarzenie'); }

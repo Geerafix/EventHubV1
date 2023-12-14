@@ -31,17 +31,14 @@
         <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['required']">Maks. ilość osób wydarzenia jest wymagana</div>
         <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['max']">Wydarzenie może mieć maks. liczbę 999 osób</div>
 
-      <input formControlName="data_rozpoczecia" type="text" placeholder="Data rozpoczęcia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
-        <div class="error" *ngIf="eventForm.controls['data_rozpoczecia'].errors?.['required']">Data rozpoczęcia jest wymagana</div>
-
-      <input formControlName="data_zakonczenia" type="text" placeholder="Data zakończenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
-        <div class="error" *ngIf="eventForm.controls['data_zakonczenia'].errors?.['required']">Data zakończenia jest wymagana</div>
+      <input formControlName="data_wydarzenia" type="text" placeholder="Data wydarzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
+        <div class="error" *ngIf="eventForm.controls['data_wydarzenia'].errors?.['required']">Data wydarzenia jest wymagana</div>
 
       <input formControlName="cena_biletu" type="number" placeholder="Cena biletu">
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['required']">Cena biletu jest wymagana</div>
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['max']">Cena bletu może wynosić maks. 999 zł</div>
 
-      <app-add-plan></app-add-plan>
+      <app-add-plan [eventPlan]="eventPlan"></app-add-plan>
 
       <button [disabled]="!eventForm.valid" type="submit">Zatwierdź</button>
       <!-- <p style="color: blue; font-size: 20px;">{{ eventForm.valid }}</p> -->

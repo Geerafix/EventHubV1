@@ -8,15 +8,15 @@ import { Plan } from '../models/Plan';
 
 export class EventDataService {
   eventPlan: Plan[] = [
-    new Plan("lol", new Date(), new Date()),
-    new Plan("lll", new Date(), new Date()),
-    new Plan("lss", new Date(), new Date())
+    new Plan("lol", "12:03", "12:03"),
+    new Plan("lll", "12:03", "12:03"),
+    new Plan("lss", "12:03", "12:03")
   ]
 
   eventList: Event[] = [
-    new Event(1, "Przedstawienie teatralne", "Rodzaj1", "Organizator1", "Białystok", 100, 200, new Date('2023-02-15'), new Date('2023-02-15'), this.eventPlan, 50),
-    // new Event(2, "Koncert muzyczny", "Rodzaj2", "Organizator2", "Warszawa", 120, 250, new Date('2023-03-10'), new Date('2023-03-10'), 80),
-    // new Event(3, "Wystawa sztuki", "Rodzaj3", "Organizator3", "Poznań", 80, 180, new Date('2023-04-05'), new Date('2023-04-05'), 30),
+    new Event(1, "Przedstawienie teatralne", "Rodzaj1", "Organizator1", "Białystok", 100, 200, new Date('2023-02-15'), this.eventPlan, 50),
+    new Event(2, "Koncert muzyczny", "Rodzaj2", "Organizator2", "Warszawa", 120, 250, new Date('2023-03-10'), this.eventPlan,  80),
+    new Event(3, "Wystawa sztuki", "Rodzaj3", "Organizator3", "Poznań", 80, 180, new Date('2023-04-05'), this.eventPlan, 30),
     // new Event(4, "Konferencja naukowa", "Rodzaj4", "Organizator4", "Kraków", 200, 350, new Date('2023-05-20T09:00:00'), new Date('2023-05-20'), 150),
     // new Event(5, "Pokaz filmowy", "Rodzaj5", "Organizator5", "Władysławowo", 90, 150, new Date('2023-06-15'), new Date('2023-06-15'), 60),
     // new Event(6, "Warsztaty kulinarne", "Rodzaj6", "Organizator6", "Pruszków", 60, 100, new Date('2023-07-08'), new Date('2023-07-08'), 25),
