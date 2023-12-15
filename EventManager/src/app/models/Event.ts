@@ -1,38 +1,18 @@
 import { Plan } from "./Plan";
 
 export class Event {
-  private id: number;
-  private nazwa: string;
-  private rodzaj: string;
-  private organizator: string;
-  private miejsce: string;
-  private ilosc_osob: number;
-  private max_ilosc_osob: number;
-  private data_wydarzenia: Date;
-  private plan: Plan[] = [];
-  private cena_biletu: number;
-
-  constructor(id: number,
-              nazwa: string,
-              rodzaj: string,
-              organizator: string,
-              miejsce: string,
-              ilosc_osob: number,
-              max_ilosc_osob: number,
-              data_wydarzenia: Date,
-              plan: Plan[],
-              cena_biletu: number) {
-    this.id = id;
-    this.nazwa = nazwa;
-    this.rodzaj = rodzaj;
-    this.organizator = organizator;
-    this.miejsce = miejsce;
-    this.ilosc_osob = ilosc_osob;
-    this.max_ilosc_osob = max_ilosc_osob;
-    this.data_wydarzenia = data_wydarzenia;
-    this.plan = plan;
-    this.cena_biletu = cena_biletu;
-  }
+  constructor(
+    private id: number,
+    private nazwa: string,
+    private rodzaj: string,
+    private organizator: string,
+    private miejsce: string,
+    private ilosc_osob: number,
+    private max_ilosc_osob: number,
+    private data_wydarzenia: Date,
+    private plan: Plan[],
+    private cena_biletu: number
+  ) {}
 
   get _id(): number { return this.id; }
   set _id(value: number) { this.id = value; }

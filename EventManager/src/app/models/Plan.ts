@@ -1,17 +1,11 @@
-export interface Time {
-  hours: number;
-  minutes: number;
-}
+import { Time } from "@angular/common";
 
 export class Plan {
-  private nazwa: string;
-  private godz_rozpoczecia: Time | string;
-  private godz_zakonczenia: Time | string;
-  constructor(nazwa: string, godz_rozpoczecia: Time  | string, godz_zakonczenia: Time | string) {
-    this.nazwa = nazwa;
-    this.godz_rozpoczecia = godz_rozpoczecia;
-    this.godz_zakonczenia = godz_zakonczenia;
-  }
+  constructor(
+    private nazwa: string,
+    private godz_rozpoczecia: Time  | string,
+    private godz_zakonczenia: Time | string
+  ) {}
 
   get _nazwa(): string { return this.nazwa; }
   set _nazwa(value: string) { this.nazwa = value; }

@@ -33,7 +33,9 @@ export class EventComponent implements OnInit {
   startDate: string = '';
   endDate: string = '';
 
-  constructor(private router: Router, private eventDataService: EventDataService) {
+  constructor(
+    private router: Router,
+    private eventDataService: EventDataService) {
     this.eventList = eventDataService.getEvents();
   }
 
@@ -45,18 +47,9 @@ export class EventComponent implements OnInit {
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
   isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
 
-  addEvent() {
-    this.router.navigate(['/dodaj-wydarzenie']);
-  }
-
-  showEventDetails(event: Event): void {
-
-    this.router.navigate(['/szczegoly', event._id]);
-  }
-
-  buyTicket(event: Event): void {
-    this.router.navigate(['/kup-bilet', event._id]);
-  }
+  addEvent() { this.router.navigate(['/dodaj-wydarzenie']); }
+  showEventDetails(event: Event): void { this.router.navigate(['/szczegoly', event._id]); }
+  buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]); }
 
   clearPipe() {
     this.search = '';

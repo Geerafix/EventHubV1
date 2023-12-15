@@ -23,10 +23,20 @@ export class BuyTicketComponent implements OnInit {
                                  Validators.minLength(3),
                                  Validators.maxLength(20),
                                  Validators.pattern(/^[A-Za-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ][a-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ]*$/)]),
-      nazwisko: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-      data_urodzenia: new FormControl('', [Validators.required, this.validBirthDate]),
-      email: new FormControl('', [Validators.required, this.validEmail]),
-      nr_telefonu: new FormControl('', [Validators.required, Validators.min(100000000), Validators.max(999999999)]),
+
+      nazwisko: new FormControl('', [Validators.required,
+                                     Validators.minLength(3),
+                                     Validators.maxLength(20)]),
+
+      data_urodzenia: new FormControl('', [Validators.required,
+                                           this.validBirthDate]),
+
+      email: new FormControl('', [Validators.required,
+                                  this.validEmail]),
+
+      nr_telefonu: new FormControl('', [Validators.required,
+                                        Validators.min(100000000),
+                                        Validators.max(999999999)]),
     });
   }
 

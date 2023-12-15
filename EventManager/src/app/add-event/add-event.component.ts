@@ -16,21 +16,40 @@ import { Plan } from '../models/Plan';
 })
 
 export class AddEventComponent {
+  eventForm!: FormGroup;
   eventList: Event[] = [];
   eventPlan: Plan[] = [];
   event!: Event;
-  eventForm!: FormGroup;
 
-  constructor(private router: Router, private eventDataService: EventDataService) {
+  constructor(private router: Router,
+              private eventDataService: EventDataService,) {
     this.eventList = eventDataService.getEvents();
+    
     this.eventForm = new FormGroup({
-      nazwa: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-      rodzaj: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-      organizator: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-      miejsce: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-      max_ilosc_osob: new FormControl('', [Validators.required, Validators.max(1000)]),
-      data_wydarzenia: new FormControl('', [Validators.required, this.validEventDate]),
-      cena_biletu: new FormControl('', [Validators.required, Validators.max(1000)]),
+      nazwa: new FormControl('', [Validators.required,
+                                  Validators.minLength(5),
+                                  Validators.maxLength(30)]),
+
+      rodzaj: new FormControl('', [Validators.required,
+                                   Validators.minLength(5),
+                                   Validators.maxLength(30)]),
+
+      organizator: new FormControl('', [Validators.required,
+                                        Validators.minLength(5),
+                                        Validators.maxLength(30)]),
+
+      miejsce: new FormControl('', [Validators.required,
+                                    Validators.minLength(5),
+                                    Validators.maxLength(30)]),
+
+      max_ilosc_osob: new FormControl('', [Validators.required,
+                                           Validators.max(1000)]),
+
+      data_wydarzenia: new FormControl('', [Validators.required,
+                                            this.validEventDate]),
+
+      cena_biletu: new FormControl('', [Validators.required,
+                                        Validators.max(1000)]),
     });
   }
 

@@ -19,23 +19,22 @@ export class EventDetailsComponent implements OnInit {
   public event: Event | undefined;
   public id!: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private eventDataSerice: EventDataService) {
-    this.eventList = eventDataSerice.getEvents();
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private eventDataService: EventDataService) {
+    this.eventList = eventDataService.getEvents();
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
     this.event = this.eventList.find((event) => event._id === this.id);
-
-    if (this.event) {
-      this.eventPlan = this.event._plan;
-    }
+    this.eventPlan = this.event?._plan;
   }
 
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
   isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
 
   back(): void { this.router.navigate(['']); }
-
   buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]) }
 }
