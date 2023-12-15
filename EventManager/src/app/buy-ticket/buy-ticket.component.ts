@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet, RouterLinkActive, ActivatedRoute} from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
 import { Event } from '../models/Event';
+import { Participant } from '../models/Participant';
 
 @Component({
   selector: 'app-buy-ticket',
@@ -13,9 +14,9 @@ import { Event } from '../models/Event';
   styleUrl: './buy-ticket.component.css'
 })
 export class BuyTicketComponent implements OnInit {
-  buyTicketForm: FormGroup;
-  event: Event | undefined;
-  id!: number;
+  public buyTicketForm: FormGroup;
+  public event: Event | undefined;
+  public id!: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataService: EventDataService ) {
     this.buyTicketForm = new FormGroup({
@@ -46,7 +47,12 @@ export class BuyTicketComponent implements OnInit {
   }
 
   buyTicket(): void {
-
+    this.event?.addParticipant(new Participant(this.buyTicketForm.value.imie,
+                                               this.buyTicketForm.value.nazwisko,
+                                               this.buyTicketForm.value.data_urodzenia,
+                                               this.buyTicketForm.value.email,
+                                               this.buyTicketForm.value.nr_telefonu));
+    this.router.navigate(['']);
   }
 
   back() { this.router.navigate(['']); }

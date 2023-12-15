@@ -1,4 +1,5 @@
 import { Plan } from "./Plan";
+import { Participant } from "./Participant";
 
 export class Event {
   constructor(
@@ -10,8 +11,9 @@ export class Event {
     private ilosc_osob: number,
     private max_ilosc_osob: number,
     private data_wydarzenia: Date,
+    private cena_biletu: number,
     private plan: Plan[],
-    private cena_biletu: number
+    private uczestnicy: Participant[]
   ) {}
 
   get _id(): number { return this.id; }
@@ -38,9 +40,14 @@ export class Event {
   get _data_wydarzenia(): Date { return this.data_wydarzenia; }
   set _data_wydarzenia(value: Date) { this.data_wydarzenia = value; }
 
+  get _cena_biletu(): number { return this.cena_biletu; }
+  set _cena_biletu(cena_biletu: number) { this.cena_biletu = cena_biletu; }
+
   get _plan(): Plan[] { return this.plan; }
   set _plan(value: Plan[]) { this.plan = value; }
 
-  get _cena_biletu(): number { return this.cena_biletu; }
-  set _cena_biletu(cena_biletu: number) { this.cena_biletu = cena_biletu; }
+  get _uczestnicy(): Participant[] { return this.uczestnicy; }
+  set _uczestnicy(value: Participant[]) { this.uczestnicy = value; }
+
+  addParticipant(uczestnik: Participant) { this.uczestnicy.push(uczestnik); }
 }

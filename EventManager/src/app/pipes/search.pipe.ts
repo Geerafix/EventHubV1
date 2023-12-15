@@ -16,8 +16,6 @@ export class SearchPipe implements PipeTransform {
         searchByField = event._nazwa;
       } else if (searchBy === 'rodzaj') {
         searchByField = event._rodzaj;
-      } else if (searchBy === 'organizator') {
-        searchByField = event._organizator;
       } else if (searchBy === 'miejsce') {
         searchByField = event._miejsce;
       }

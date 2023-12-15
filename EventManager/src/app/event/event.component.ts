@@ -27,11 +27,11 @@ import { HighlightDirective } from '../directives/highlight.directive';
               HighlightDirective]
 })
 export class EventComponent implements OnInit {
-  eventList: Event[] = [];
-  search: string = '';
-  searchBy: string = 'nazwa';
-  startDate: string = '';
-  endDate: string = '';
+  public eventList: Event[] = [];
+  public search: string = '';
+  public searchBy: string = 'nazwa';
+  public startDate: string = '';
+  public endDate: string = '';
 
   constructor(
     private router: Router,

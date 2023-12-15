@@ -114,7 +114,7 @@ Wymagania:
 
 * - typy TypeScript (czy każda zmienna ma przyporządkowany typ) - 1pkt
 
-=== - zaawansowane elementy TypeScript (jeden z wymienionych): - 2pkt
+* - zaawansowane elementy TypeScript (jeden z wymienionych): - 2pkt
   
   - klasy pochodne TypeScript (czy wykorzystano również klasy pochodne) ,
   

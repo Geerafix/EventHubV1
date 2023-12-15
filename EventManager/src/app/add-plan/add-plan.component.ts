@@ -11,10 +11,9 @@ import { Plan } from '../models/Plan';
   styleUrl: './add-plan.component.css'
 })
 export class AddPlanComponent {
-  planForm: FormGroup;
-  eventTitle: string | undefined;
   @Input() eventPlan: Plan[] = [];
-  plan: Plan | undefined;
+  public planForm: FormGroup;
+  u!: any;
 
   constructor() {
     this.planForm = new FormGroup({
@@ -22,8 +21,7 @@ export class AddPlanComponent {
                                   Validators.minLength(5),
                                   Validators.maxLength(30)]),
 
-      godz_rozpoczecia: new FormControl('', [Validators.required,
-                                             this.validStartHour]),
+      godz_rozpoczecia: new FormControl('', [Validators.required]),
 
       godz_zakonczenia: new FormControl('', [Validators.required,
                                              this.validEndHour]),
@@ -38,22 +36,8 @@ export class AddPlanComponent {
 
   removePlan(index: number) { this.eventPlan.splice(index, 1); }
 
-  validStartHour(control: AbstractControl): { [key: string]: any } | null {
-    // const godz_rozpoczecia = control.get('godz_rozpoczecia');
-
-    // if (godz_rozpoczecia && control.value < godz_rozpoczecia.value) {
-    //   return { 'validStartHour': true };
-    // }
-    return null;
-  }
-
   validEndHour(control: AbstractControl): { [key: string]: any } | null {
-    // let godz_rozpoczecia;
 
-    // let lol = control.value;
-    // if (godz_rozpoczecia && lol > godz_rozpoczecia) {
-    //   return { 'validEndHour': true };
-    // }
     return null;
   }
 }
