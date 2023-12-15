@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
 import { Event } from '../models/Event';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AddPlanComponent } from '../add-plan/add-plan.component';
 import { Plan } from '../models/Plan';
 
@@ -24,12 +24,12 @@ export class AddEventComponent {
   constructor(private router: Router, private eventDataService: EventDataService) {
     this.eventList = eventDataService.getEvents();
     this.eventForm = new FormGroup({
-      nazwa: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-      rodzaj: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-      organizator: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-      miejsce: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      nazwa: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+      rodzaj: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+      organizator: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
+      miejsce: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
       max_ilosc_osob: new FormControl('', [Validators.required, Validators.max(1000)]),
-      data_wydarzenia: new FormControl('', [Validators.required]),
+      data_wydarzenia: new FormControl('', [Validators.required, this.validEventDate]),
       cena_biletu: new FormControl('', [Validators.required, Validators.max(1000)]),
     });
   }
@@ -48,5 +48,12 @@ export class AddEventComponent {
                                           this.eventPlan,
                                           this.eventForm.value.cena_biletu));
     this.router.navigate(['/']);
+  }
+
+  validEventDate(control: AbstractControl): { [key: string]: any } | null {
+    if (new Date(control.value) < new Date()) {
+      return { 'validEventDate': true };
+    }
+    return null;
   }
 }
