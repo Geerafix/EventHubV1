@@ -132,7 +132,7 @@ Wymagania:
 
 - operacje modyfikacji danych za pomocą 4 rodzajów żądań http - 1pkt
 
-- dane pochodzące z jednej klasy usługi - 1pkt
+* - dane pochodzące z jednej klasy usługi - 1pkt
 
 - dodatkowy serwis (a)synchroniczny - 1pkt
 

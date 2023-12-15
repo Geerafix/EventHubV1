@@ -13,10 +13,7 @@ import { Plan } from '../models/Plan';
 export class AddPlanComponent {
   planForm: FormGroup;
   eventTitle: string | undefined;
-  @Input() eventForm: FormGroup | undefined;
   @Input() eventPlan: Plan[] = [];
-  @Input() start_date: Date | undefined;
-  @Input() end_date: Date | undefined;
   plan: Plan | undefined;
 
   constructor() {
@@ -47,10 +44,11 @@ export class AddPlanComponent {
   }
 
   validEndHour(control: AbstractControl): { [key: string]: any } | null {
-    // const godz_zakonczenia = control.get('godz_zakonczenia');
+    // let godz_rozpoczecia;
 
-    // if (godz_zakonczenia && control.value < godz_zakonczenia.value) {
-    //   return { 'validStartHour': true };
+    // let lol = control.value;
+    // if (godz_rozpoczecia && lol > godz_rozpoczecia) {
+    //   return { 'validEndHour': true };
     // }
     return null;
   }
