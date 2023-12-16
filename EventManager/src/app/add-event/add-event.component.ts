@@ -64,7 +64,7 @@ export class AddEventComponent {
   back(): void { this.router.navigate(['/']); }
 
   addEventToEventList(): void {
-    let newEvent = new Event(this.eventList.length + 2,
+    let newEvent = new Event(200,
                             this.eventForm.value.nazwa,
                             this.eventForm.value.rodzaj,
                             this.eventForm.value.organizator,

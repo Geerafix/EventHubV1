@@ -29,7 +29,7 @@
 
       <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób">
         <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['required']">Maks. ilość osób wydarzenia jest wymagana</div>
-        <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['max']">Wydarzenie może mieć maks. liczbę 999 osób</div>
+        <div class="error" *ngIf="eventForm.controls['max_ilosc_osob'].errors?.['max']">Wydarzenie może mieć maks. 999 osób</div>
 
       <input formControlName="data_wydarzenia" type="text" placeholder="Data wydarzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
         <div class="error" *ngIf="eventForm.controls['data_wydarzenia'].errors?.['required']">Data wydarzenia jest wymagana</div>

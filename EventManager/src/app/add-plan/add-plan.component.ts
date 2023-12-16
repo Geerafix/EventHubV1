@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Plan } from '../models/Plan';
+import { PlanListFormComponent } from '../plan-list-form/plan-list-form.component';
 
 @Component({
   selector: 'app-add-plan',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, PlanListFormComponent],
   templateUrl: './add-plan.component.html',
   styleUrl: './add-plan.component.css'
 })
@@ -32,8 +33,6 @@ export class AddPlanComponent {
                                  this.planForm.value.godz_rozpoczecia,
                                  this.planForm.value.godz_zakonczenia));
   }
-
-  removePlan(index: number) { this.eventPlan.splice(index, 1); }
 
   validEndHour(control: AbstractControl): { [key: string]: any } | null {
 

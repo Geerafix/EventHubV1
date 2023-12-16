@@ -118,11 +118,11 @@ Wymagania:
   
   - klasy pochodne TypeScript (czy wykorzystano również klasy pochodne) ,
   
-  - getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)
+  * - getter+setter (czy wykorzystano i  czy właściwie zostały dobrane)
     +parametry opcjonalne metod (czy są i czy właściwie dobrane)
     +modyfikatory dostępu w konstruktorze.
 
-* - wykorzystanie formularzy, min. 5 elementów (czy właściwie wybrano dane do wprowadzania i dobrano rodzaj elementu formularza, czy nie ma        dwustronnego wiązania danych w szablonie - 1pkt
+* - wykorzystanie formularzy, min. 5 elementów (czy właściwie wybrano dane do wprowadzania i dobrano rodzaj elementu formularza, czy nie ma dwustronnego wiązania danych w szablonie - 1pkt
 
 * - walidacja danych wprowadzanych przez użytkownika ( w każdym przypadku wprowadzania danych, czy odpowiednio dobrano walidatory) - 2pkt,
 

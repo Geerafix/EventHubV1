@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "id": 2,
+      "id": 1,
       "nazwa": "PIERWSZY",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "id": 232,
+      "id": 2,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -62,7 +62,7 @@
       "uczestnicy": []
     },
     {
-      "id": 2234,
+      "id": 3,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -85,7 +85,7 @@
       "uczestnicy": []
     },
     {
-      "id": 211,
+      "id": 4,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -108,7 +108,7 @@
       "uczestnicy": []
     },
     {
-      "id": 26,
+      "id": 5,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -131,7 +131,7 @@
       "uczestnicy": []
     },
     {
-      "id": 23,
+      "id": 6,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -154,7 +154,7 @@
       "uczestnicy": []
     },
     {
-      "id": 12,
+      "id": 7,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
@@ -172,6 +172,102 @@
           "nazwa": "123123",
           "godz_rozpoczecia": "12:23",
           "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 10,
+      "nazwa": "TESTT",
+      "rodzaj": "TESTT",
+      "organizator": "TESTT",
+      "miejsce": "TESTT",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "+199999-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "ETSTT",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "ETSTT",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "ETSTT",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "ETSTT",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "ETSTT",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "ETSTT",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 200,
+      "nazwa": "asdasda",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "asdasd",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "9999-03-12T00:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
+        },
+        {
+          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
+          "godz_rozpoczecia": "12:03",
+          "godz_zakonczenia": "12:03"
         }
       ],
       "uczestnicy": []
