@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject} from '@angular/core';
+import { CommonModule, Time } from '@angular/common';
 import { Event } from '../models/Event';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
@@ -11,6 +11,8 @@ import { ScaleDirective } from '../directives/scale.directive';
 import { HighlightDirective } from '../directives/highlight.directive';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Participant } from '../models/Participant';
+import { Plan } from '../models/Plan';
 
 @Component({
     selector: 'app-event',
@@ -35,13 +37,14 @@ export class EventComponent implements OnInit {
   public searchBy: string = 'nazwa';
   public startDate: string = '';
   public endDate: string = '';
+  public event!: Event;
 
   constructor(
     private httpClient: HttpClient,
     private router: Router,
     private eventDataService: EventDataService) {
-    this.eventList = eventDataService.getEvents();
-
+    this.fetchData();
+    console.log();
   }
 
   ngOnInit(): void {
@@ -66,10 +69,48 @@ export class EventComponent implements OnInit {
 
 
 
-  private apiUrl = 'https://localhost:3000/events';
+  private apiUrl = 'http://localhost:3000/events';
 
-  getData(): Observable<Event[]> {
-    return this.httpClient.get<Event[]>(`${this.apiUrl}/1`);
+  fetchData() {
+    this.httpClient.get(this.apiUrl).subscribe((res: any) => {
+      this.eventList = res.map((item: any) => {
+        let {
+          id,
+          nazwa,
+          rodzaj,
+          organizator,
+          miejsce,
+          max_ilosc_osob,
+          data_wydarzenia,
+          cena_biletu,
+          plan,
+          uczestnicy
+        } = item;
+
+        return new Event(
+          id,
+          nazwa,
+          rodzaj,
+          organizator,
+          miejsce,
+          max_ilosc_osob,
+          new Date(data_wydarzenia),
+          cena_biletu,
+          plan.map((planItem: Plan) => ({
+            nazwa: planItem._nazwa,
+            godz_rozpoczecia: planItem._godz_rozpoczecia,
+            godz_zakonczenia: planItem._godz_zakonczenia
+          })),
+          uczestnicy.map((participantItem: Participant) => ({
+            imie: participantItem._imie,
+            nazwisko: participantItem._nazwisko,
+            email: participantItem._email,
+            wiek: participantItem._wiek,
+            nr_telefonu: participantItem._nr_telefonu
+          }))
+        );
+      });
+    });
   }
 
   addData(data: any): Observable<any> {
