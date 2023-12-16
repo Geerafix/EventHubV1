@@ -130,7 +130,7 @@ Wymagania:
 
 - modyfikacja danych odbywa się tylko w jednym komponencie - 1pkt
 
-- operacje modyfikacji danych za pomocą 4 rodzajów żądań http - 1pkt
+* - operacje modyfikacji danych za pomocą 4 rodzajów żądań http - 1pkt
 
 * - dane pochodzące z jednej klasy usługi - 1pkt
 

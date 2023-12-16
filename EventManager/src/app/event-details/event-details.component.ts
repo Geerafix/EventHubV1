@@ -14,22 +14,21 @@ import { Plan } from '../models/Plan';
   imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive, PlanComponent]
 })
 export class EventDetailsComponent implements OnInit {
-  public eventList: Event[] = [];
-  public eventPlan: Plan[] | undefined;
-  public event: Event | undefined;
+  public event!: Event;
   public id!: number;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private eventDataService: EventDataService) {
-    this.eventList = eventDataService.getEvents();
+    this.route.params.subscribe((params) => { this.id = +params['id']; });
+    this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
+      this.event = event;
+    });
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => { this.id = +params['id']; });
-    this.event = this.eventList.find((event) => event._id === this.id);
-    this.eventPlan = this.event?._plan;
+
   }
 
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }

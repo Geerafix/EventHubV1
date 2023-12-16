@@ -15,7 +15,7 @@ import { Participant } from '../models/Participant';
 })
 export class BuyTicketComponent implements OnInit {
   public buyTicketForm: FormGroup;
-  public event: Event | undefined;
+  public event!: Event;
   public id!: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private eventDataService: EventDataService ) {
@@ -39,19 +39,25 @@ export class BuyTicketComponent implements OnInit {
                                         Validators.min(100000000),
                                         Validators.max(999999999)]),
     });
+
+    this.route.params.subscribe((params) => { this.id = +params['id']; });
+    this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
+      this.event = event;
+    });
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => { this.id = +params['id']; });
-    this.event = this.eventDataService.getEvent(this.id);
+
   }
 
   buyTicket(): void {
-    this.event?.addParticipant(new Participant(this.buyTicketForm.value.imie,
+    this.event.addParticipant(new Participant(this.buyTicketForm.value.imie,
                                                this.buyTicketForm.value.nazwisko,
                                                this.buyTicketForm.value.data_urodzenia,
                                                this.buyTicketForm.value.email,
                                                this.buyTicketForm.value.nr_telefonu));
+
+    this.eventDataService.updateData(this.id, this.event).subscribe();
     this.router.navigate(['']);
   }
 

@@ -29,9 +29,9 @@ export class AddEventComponent {
   public participants: Participant[] = [];
   public eventForm!: FormGroup;
 
-  constructor(private router: Router,
-              private eventDataService: EventDataService,) {
-    this.eventList = eventDataService.getEvents();
+  constructor(
+    private router: Router,
+    private eventDataService: EventDataService,) {
 
     this.eventForm = new FormGroup({
       nazwa: new FormControl('', [Validators.required,
@@ -64,16 +64,19 @@ export class AddEventComponent {
   back(): void { this.router.navigate(['/']); }
 
   addEventToEventList(): void {
-    this.eventList.push(new Event(this.eventList.length + 1,
-                                  this.eventForm.value.nazwa,
-                                  this.eventForm.value.rodzaj,
-                                  this.eventForm.value.organizator,
-                                  this.eventForm.value.miejsce,
-                                  this.eventForm.value.max_ilosc_osob,
-                                  new Date(this.eventForm.value.data_wydarzenia),
-                                  this.eventForm.value.cena_biletu,
-                                  this.eventPlan,
-                                  this.participants));
+    let newEvent = new Event(this.eventList.length + 2,
+                            this.eventForm.value.nazwa,
+                            this.eventForm.value.rodzaj,
+                            this.eventForm.value.organizator,
+                            this.eventForm.value.miejsce,
+                            this.eventForm.value.max_ilosc_osob,
+                            new Date(this.eventForm.value.data_wydarzenia),
+                            this.eventForm.value.cena_biletu,
+                            this.eventPlan,
+                            this.participants);
+
+    this.eventDataService.postData(newEvent).subscribe();
+
     this.router.navigate(['/']);
   }
 

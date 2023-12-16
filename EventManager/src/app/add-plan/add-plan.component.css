@@ -49,6 +49,7 @@ input:focus {
 
 .delete-button {
   background-color:  rgb(218, 143, 143);
+  margin-left: auto;
 }
 
 #plan-info {

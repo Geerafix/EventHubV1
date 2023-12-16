@@ -12,8 +12,7 @@
       <label><span class="info">Maks. ilość osób: </span>{{ event._max_ilosc_osob }}</label>
       <label><span class="info">Data wydarzenia: </span>{{ event._data_wydarzenia | date: 'dd.MM.yyyy' }}</label>
       <label><span class="info">Cena biletu: </span>{{ event._cena_biletu | currency: 'PLN':'zł' }}</label><br>
-      <app-plan [eventPlan]="eventPlan"></app-plan>
-      <label ></label>
+      <app-plan [eventPlan]="event._plan"></app-plan>
       <a (click)="buyTicket(event)" id="info">Kup bilet</a>
 
       <!-- TYLKO TESTOWE - WYŚWIETLANIE UCZESTNIKÓW WYDARZENIA -->
@@ -24,7 +23,6 @@
           <span class="plan-info"></span> {{ uczestnik._nr_telefonu }}
           <span class="plan-info"></span> {{ uczestnik._wiek }}
       </div> -->
-
     </div>
   </div>
   <div *ngIf="isBuyTicket()">
