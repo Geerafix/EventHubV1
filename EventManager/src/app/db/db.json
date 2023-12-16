@@ -1,0 +1,33 @@
+{
+  "events": [
+    { "id": 1,
+      "nazwa": "Event",
+      "rodzaj": "rodzaj",
+      "organizator": "org",
+      "miejsce": "miejsc",
+      "max_ilosc_osob": 10,
+      "data_wydarzenia": "2012-04-23T18:25:43.511Z",
+      "cena_biletu": 10,
+      "plan": [
+        {
+          "nazwa": "Nazwa planu1",
+          "godz_rozpoczecia": "2012-04-23T10:00:00.000Z",
+          "godz_zakonczenia": "2012-04-23T12:00:00.000Z"
+        },
+        {
+          "nazwa": "Nazwa planu2",
+          "godz_rozpoczecia": "2012-04-23T14:00:00.000Z",
+          "godz_zakonczenia": "2012-04-23T16:00:00.000Z"
+        }
+      ],
+      "uczestnicy": [
+        { "imie": "Adam",
+          "nazwisko": "Grzeszczuk",
+          "email": "ger@wp.pl",
+          "wiek": "2002-09-28T18:25:43.511Z",
+          "nr_telefonu": 888562810
+        }
+      ]
+    }
+  ]
+}

@@ -9,6 +9,8 @@ import { EventDataService } from '../services/event-data.service';
 import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
 import { ScaleDirective } from '../directives/scale.directive';
 import { HighlightDirective } from '../directives/highlight.directive';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-event',
@@ -24,7 +26,8 @@ import { HighlightDirective } from '../directives/highlight.directive';
               RouterLinkActive,
               AddEventComponent,
               ScaleDirective,
-              HighlightDirective]
+              HighlightDirective,
+              HttpClientModule]
 })
 export class EventComponent implements OnInit {
   public eventList: Event[] = [];
@@ -34,9 +37,11 @@ export class EventComponent implements OnInit {
   public endDate: string = '';
 
   constructor(
+    private httpClient: HttpClient,
     private router: Router,
     private eventDataService: EventDataService) {
     this.eventList = eventDataService.getEvents();
+
   }
 
   ngOnInit(): void {
@@ -56,5 +61,26 @@ export class EventComponent implements OnInit {
     this.searchBy = 'nazwa'
     this.startDate = '';
     this.endDate = '';
+  }
+
+
+
+
+  private apiUrl = 'https://localhost:3000/events';
+
+  getData(): Observable<Event[]> {
+    return this.httpClient.get<Event[]>(`${this.apiUrl}/1`);
+  }
+
+  addData(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/addData`, data);
+  }
+
+  updateData(id: string, data: any): Observable<any> {
+    return this.httpClient.put(`${this.apiUrl}/updateData/${id}`, data);
+  }
+
+  deleteData(id: string): Observable<any> {
+    return this.httpClient.delete(`${this.apiUrl}/deleteData/${id}`);
   }
 }

@@ -8,7 +8,6 @@ export class Event {
     private rodzaj: string,
     private organizator: string,
     private miejsce: string,
-    private ilosc_osob: number,
     private max_ilosc_osob: number,
     private data_wydarzenia: Date,
     private cena_biletu: number,
@@ -30,9 +29,6 @@ export class Event {
 
   get _miejsce(): string { return this.miejsce; }
   set _miejsce(value: string) { this.miejsce = value; }
-
-  get _ilosc_osob(): number { return this.ilosc_osob; }
-  set _ilosc_osob(value: number) { this.ilosc_osob = value; }
 
   get _max_ilosc_osob(): number { return this.max_ilosc_osob; }
   set _max_ilosc_osob(value: number) { this.max_ilosc_osob = value; }

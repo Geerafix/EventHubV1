@@ -69,7 +69,6 @@ export class AddEventComponent {
                                   this.eventForm.value.rodzaj,
                                   this.eventForm.value.organizator,
                                   this.eventForm.value.miejsce,
-                                  0,
                                   this.eventForm.value.max_ilosc_osob,
                                   new Date(this.eventForm.value.data_wydarzenia),
                                   this.eventForm.value.cena_biletu,
