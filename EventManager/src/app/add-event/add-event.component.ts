@@ -64,7 +64,8 @@ export class AddEventComponent {
   back(): void { this.router.navigate(['/']); }
 
   addEventToEventList(): void {
-    let newEvent = new Event(200,
+    // naprawić dodawanie - id ma byćauto increment
+    let newEvent = new Event(2000,
                             this.eventForm.value.nazwa,
                             this.eventForm.value.rodzaj,
                             this.eventForm.value.organizator,

@@ -271,6 +271,54 @@
         }
       ],
       "uczestnicy": []
+    },
+    {
+      "id": 2000,
+      "nazwa": "LOOOOOOOOOOOL",
+      "rodzaj": "LOOOOOOOOOOOL",
+      "organizator": "LOOOOOOOOOOOL",
+      "miejsce": "LOOOOOOOOOOOL",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "9999-03-12T00:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        },
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        },
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        },
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        },
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        },
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        },
+        {
+          "nazwa": "LOOOOOOOOOOOL",
+          "godz_rozpoczecia": "12:32",
+          "godz_zakonczenia": "12:23"
+        }
+      ],
+      "uczestnicy": []
     }
   ]
 }

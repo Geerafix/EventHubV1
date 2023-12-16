@@ -35,6 +35,7 @@ export class AddPlanComponent {
   }
 
   validEndHour(control: AbstractControl): { [key: string]: any } | null {
+    // zrobić walidacje godzin
 
     return null;
   }
