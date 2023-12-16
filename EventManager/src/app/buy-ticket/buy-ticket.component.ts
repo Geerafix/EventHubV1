@@ -52,10 +52,10 @@ export class BuyTicketComponent implements OnInit {
 
   buyTicket(): void {
     this.event.addParticipant(new Participant(this.buyTicketForm.value.imie,
-                                               this.buyTicketForm.value.nazwisko,
-                                               this.buyTicketForm.value.data_urodzenia,
-                                               this.buyTicketForm.value.email,
-                                               this.buyTicketForm.value.nr_telefonu));
+                                              this.buyTicketForm.value.nazwisko,
+                                              this.buyTicketForm.value.data_urodzenia,
+                                              this.buyTicketForm.value.email,
+                                              this.buyTicketForm.value.nr_telefonu));
 
     this.eventDataService.updateData(this.id, this.event).subscribe();
     this.router.navigate(['']);

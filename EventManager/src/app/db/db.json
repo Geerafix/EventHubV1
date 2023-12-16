@@ -1,39 +1,13 @@
 {
   "events": [
     {
-      "id": 1,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "asdasd",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "9999-03-12T00:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "12312",
-          "godz_rozpoczecia": "12:33",
-          "godz_zakonczenia": "21:23"
-        }
-      ],
-      "uczestnicy": [
-        {
-          "imie": "asd",
-          "nazwisko": "asdas",
-          "email": "2002-09-09",
-          "wiek": "s@wp.pl",
-          "nr_telefonu": 123123123
-        }
-      ]
-    },
-    {
       "id": 2,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",
       "miejsce": "123123",
       "max_ilosc_osob": 123,
-      "data_wydarzenia": "+129999-03-11T23:00:00.000Z",
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
       "cena_biletu": 123,
       "plan": [
         {

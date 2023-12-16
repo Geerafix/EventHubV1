@@ -13,7 +13,6 @@ import { Plan } from '../models/Plan';
 export class AddPlanComponent {
   @Input() eventPlan: Plan[] = [];
   public planForm: FormGroup;
-  u!: any;
 
   constructor() {
     this.planForm = new FormGroup({

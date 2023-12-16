@@ -28,7 +28,9 @@ export class EventDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // if (!this.id) {
+    //   this.router.navigate(['']);
+    // }
   }
 
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
@@ -36,4 +38,8 @@ export class EventDetailsComponent implements OnInit {
 
   back(): void { this.router.navigate(['']); }
   buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]) }
+  deleteEvent(id: number) {
+    this.eventDataService.deleteData(this.id).subscribe();
+    this.router.navigate(['']);
+  }
 }

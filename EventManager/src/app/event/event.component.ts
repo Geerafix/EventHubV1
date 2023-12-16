@@ -42,8 +42,8 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.eventList.sort((a, b) => b._data_wydarzenia.getTime() - a._data_wydarzenia.getTime());
     this.eventDataService.getData().subscribe((events: Event[]) => {
+      events.sort((a, b) => b._data_wydarzenia.getTime() - a._data_wydarzenia.getTime());
       this.eventList = events;
     });
   }

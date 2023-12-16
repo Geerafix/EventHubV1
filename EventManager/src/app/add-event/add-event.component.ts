@@ -27,7 +27,7 @@ export class AddEventComponent {
   public eventList: Event[] = [];
   public eventPlan: Plan[] = [];
   public participants: Participant[] = [];
-  public eventForm!: FormGroup;
+  public eventForm: FormGroup;
 
   constructor(
     private router: Router,
