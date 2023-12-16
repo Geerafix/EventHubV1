@@ -6,7 +6,7 @@
   </button>
   <div class="form-container">
     <form id="buy-ticket-form-container" [formGroup]="buyTicketForm" (ngSubmit)="buyTicket()">
-      <label style="font-size: 20px;">Formularz kupowania biletu na: </label>
+      <label style="font-size: 20px;">Formularz kupowania biletu na:</label>
       <label style="font-size: 18px;">{{ event._nazwa }}</label>
       <input formControlName="imie" type="text" placeholder="Imię">
         <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['required']">Imię jest wymagane</div>

@@ -28,9 +28,7 @@ export class EventDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (!this.id) {
-    //   this.router.navigate(['']);
-    // }
+
   }
 
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }

@@ -7,8 +7,8 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 export class HighlightDirective {
   @Input() _color: string = '#f7f7e4';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.el.nativeElement, 'transition', '0.15s');
+  constructor(private element: ElementRef, private renderer: Renderer2) {
+    this.renderer.setStyle(this.element.nativeElement, 'transition', '0.15s');
   }
 
   @HostListener('mouseenter') onMouseEnter() {
@@ -19,7 +19,7 @@ export class HighlightDirective {
     this.highlight(null);
   }
 
-  private highlight(color: string | null) {
-    this.renderer.setStyle(this.el.nativeElement, 'background-color', color);
+  highlight(color: string | null) {
+    this.renderer.setStyle(this.element.nativeElement, 'background-color', color);
   }
 }

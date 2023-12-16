@@ -2,6 +2,159 @@
   "events": [
     {
       "id": 2,
+      "nazwa": "PIERWSZY",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "123123",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        },
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": [
+        {
+          "imie": "Adam",
+          "nazwisko": "Grzeszczuk",
+          "email": "2002-09-09",
+          "wiek": "w@wp.pl",
+          "nr_telefonu": 123123123
+        },
+        {
+          "imie": "Beczka",
+          "nazwisko": "Breczka",
+          "email": "2001-02-09",
+          "wiek": "eeee@wp.pl",
+          "nr_telefonu": 123123123
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "nazwa": "asdasd",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "123123",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        },
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 2234,
+      "nazwa": "asdasd",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "123123",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        },
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 211,
+      "nazwa": "asdasd",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "123123",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        },
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 26,
+      "nazwa": "asdasd",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "123123",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        },
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 23,
+      "nazwa": "asdasd",
+      "rodzaj": "asdasd",
+      "organizator": "asdasd",
+      "miejsce": "123123",
+      "max_ilosc_osob": 123,
+      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
+      "cena_biletu": 123,
+      "plan": [
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        },
+        {
+          "nazwa": "123123",
+          "godz_rozpoczecia": "12:23",
+          "godz_zakonczenia": "12:12"
+        }
+      ],
+      "uczestnicy": []
+    },
+    {
+      "id": 12,
       "nazwa": "asdasd",
       "rodzaj": "asdasd",
       "organizator": "asdasd",

@@ -5,7 +5,6 @@ import { Participant } from '../models/Participant';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root',
 })

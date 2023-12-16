@@ -7,8 +7,8 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 export class ScaleDirective {
   @Input() _scale: number = 1.03;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.el.nativeElement, 'transition', '0.3s');
+  constructor(private element: ElementRef, private renderer: Renderer2) {
+    this.renderer.setStyle(this.element.nativeElement, 'transition', '0.3s');
   }
 
   @HostListener('mouseenter') onMouseEnter() {
@@ -19,7 +19,7 @@ export class ScaleDirective {
     this.scale(1);
   }
 
-  private scale(scale: number) {
-    this.renderer.setStyle(this.el.nativeElement, 'transform', `scale(${scale})`);
+  scale(scale: number) {
+    this.renderer.setStyle(this.element.nativeElement, 'transform', `scale(${scale})`);
   }
 }

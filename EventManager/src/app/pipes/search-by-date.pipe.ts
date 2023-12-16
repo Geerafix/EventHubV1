@@ -7,15 +7,13 @@ import { Event } from '../models/Event';
 })
 export class SearchByDatePipe implements PipeTransform {
   transform(value: Event[], startDate?: string, endDate?: string): Event[] {
-    if (!startDate || !endDate) {
-      return value;
-    }
+    if (!startDate || !endDate) { return value; }
 
-    const start = new Date(startDate);
-    const end = new Date(endDate);
+    let start = new Date(startDate);
+    let end = new Date(endDate);
 
     return value.filter(event => {
-      const eventDate = new Date(event._data_wydarzenia);
+      let eventDate = new Date(event._data_wydarzenia);
       return eventDate >= start && eventDate <= end;
     });
   }
