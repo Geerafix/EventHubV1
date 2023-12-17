@@ -1,4 +1,4 @@
-<h2 style="font-weight: 600; font-size: 20px;">Plan:</h2>
+<h2 style="font-weight: 600; font-size: 20px;" *ngIf="eventPlan!.length > 0">Plan:</h2>
 <div *ngFor="let plan of eventPlan, let i = index">
   <label>
     {{ i + 1 }}.
