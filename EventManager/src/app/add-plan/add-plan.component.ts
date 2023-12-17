@@ -35,10 +35,10 @@ export class AddPlanComponent {
   }
 
   validEndHour(control: AbstractControl): ValidationErrors | null {
-    const startTime = control.root.get('godz_rozpoczecia')?.value;
-    const endTime = control.value;
+    let startTime = control.root.get('godz_rozpoczecia')?.value;
+    let endTime = control.value;
 
-    if (startTime && endTime && startTime >= endTime) {
+    if ((endTime && startTime) && (endTime >= startTime)) {
         return { validEndHour: true };
     }
 

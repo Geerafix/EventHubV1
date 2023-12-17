@@ -4,14 +4,14 @@ import { Event } from '../models/Event';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
 import { PlanComponent } from '../plan/plan.component';
-import { Plan } from '../models/Plan';
+import { ScaleDirective } from '../directives/scale.directive';
 
 @Component({
   selector: 'app-event-details',
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive, PlanComponent]
+  imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive, PlanComponent, ScaleDirective]
 })
 export class EventDetailsComponent implements OnInit {
   public event!: Event;

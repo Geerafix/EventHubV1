@@ -15,9 +15,9 @@
       <label><span class="info">Cena biletu: </span>{{ event._cena_biletu | currency: 'PLN':'zł' }}</label>
       <app-plan [eventPlan]="event._plan"></app-plan>
       <div class="interact">
-        <a (click)="buyTicket(event)" id="info">Kup bilet</a>
-        <a (click)="editEvent(event)" id="info">Edytuj</a>
-        <a (click)="deleteEvent(event._id)" id="info">Usuń</a>
+        <a scale [_scale]="1.1" (click)="buyTicket(event)" id="info">Kup bilet</a>
+        <a scale [_scale]="1.1" (click)="editEvent(event)" id="info">Edytuj</a>
+        <a scale [_scale]="1.1" (click)="deleteEvent(event._id)" id="info">Usuń</a>
       </div>
 
       <!-- TYLKO TESTOWE - WYŚWIETLANIE UCZESTNIKÓW WYDARZENIA -->
