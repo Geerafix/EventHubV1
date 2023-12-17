@@ -2,13 +2,13 @@
   "events": [
     {
       "id": 1,
-      "nazwa": "Sylwester z TVP2",
+      "nazwa": "Sylwester z Czwórką",
       "rodzaj": "Koncert",
-      "organizator": "Telewizja Polska",
-      "miejsce": "Zakopane, stadion",
-      "max_ilosc_osob": 10000,
-      "data_wydarzenia": "2023-12-23T00:00:00.000Z",
-      "cena_biletu": 50,
+      "organizator": "TV4",
+      "miejsce": "Poznań, rynek",
+      "max_ilosc_osob": 8000,
+      "data_wydarzenia": "2023-12-30T00:00:00.000Z",
+      "cena_biletu": 40,
       "plan": [
         {
           "nazwa": "Modern Talking",
@@ -51,9 +51,9 @@
       "rodzaj": "Koncert",
       "organizator": "Polsat",
       "miejsce": "Kobylnica, sala koncertowa",
-      "max_ilosc_osob": 10000,
+      "max_ilosc_osob": 9000,
       "data_wydarzenia": "2023-12-30T00:00:00.000Z",
-      "cena_biletu": 500,
+      "cena_biletu": 60,
       "plan": [
         {
           "nazwa": "Akcent",
@@ -80,6 +80,51 @@
           "wiek": "1995-02-03",
           "email": "anna.nowak@example.com",
           "nr_telefonu": "987654321"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "nazwa": "Sylwester z TVP2",
+      "rodzaj": "Koncert",
+      "organizator": "Telewizja Polska",
+      "miejsce": "Zakopane, stadion",
+      "max_ilosc_osob": 10000,
+      "data_wydarzenia": "2023-12-30T00:00:00.000Z",
+      "cena_biletu": 50,
+      "plan": [
+        {
+          "nazwa": "Modern Talking",
+          "godz_rozpoczecia": "18:00",
+          "godz_zakonczenia": "19:30"
+        },
+        {
+          "nazwa": "Bad Boys Blue",
+          "godz_rozpoczecia": "19:30",
+          "godz_zakonczenia": "20:30"
+        }
+      ],
+      "uczestnicy": [
+        {
+          "imie": "Jan",
+          "nazwisko": "Kowalski",
+          "wiek": "1999-08-29",
+          "email": "jan.kowalski@example.com",
+          "nr_telefonu": "123456789"
+        },
+        {
+          "imie": "Anna",
+          "nazwisko": "Nowak",
+          "wiek": "1995-02-03",
+          "email": "anna.nowak@example.com",
+          "nr_telefonu": "987654321"
+        },
+        {
+          "imie": "Asd",
+          "nazwisko": "Asd",
+          "wiek": "2002-03-12",
+          "email": "s@pw.pl",
+          "nr_telefonu": 123123343
         }
       ]
     },

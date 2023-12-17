@@ -9,22 +9,18 @@
       <label>Formularz dodawania wydarzenia</label>
       <input formControlName="nazwa" placeholder="Nazwa wydarzenia">
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['required']">Nazwa wydarzenia jest wymagana</div>
-        <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['minlength']">Nazwa wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['maxlength']">Nazwa wydarzenia może mieć maks. 30 znaków</div>
 
       <input formControlName="rodzaj" placeholder="Rodzaj wydarzenia">
         <div class="error" *ngIf="eventForm.controls['rodzaj'].errors?.['required']">Rodzaj wydarzenia jest wymagany</div>
-        <div class="error" *ngIf="eventForm.controls['rodzaj'].errors?.['minlength']">Rodzaj wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['rodzaj'].errors?.['maxlength']">Rodzaj wydarzenia może mieć maks. 30 znaków</div>
 
       <input formControlName="organizator" placeholder="Organizator wydarzenia">
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['required']">Organizator wydarzenia jest wymagany</div>
-        <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['minlength']">Organizator wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['organizator'].errors?.['maxlength']">Organizator wydarzenia może mieć maks. 30 znaków</div>
 
       <input formControlName="miejsce" placeholder="Miejsce wydarzenia">
         <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['required']">Miejsce wydarzenia jest wymagane</div>
-        <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['minlength']">Miejsce wydarzenia musi mieć min. 5 znaków</div>
         <div class="error" *ngIf="eventForm.controls['miejsce'].errors?.['maxlength']">Miejsce wydarzenia może mieć maks. 30 znaków</div>
 
       <input formControlName="max_ilosc_osob" type="number" placeholder="Maks. ilość osób">
@@ -40,7 +36,7 @@
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['max']">Cena bletu może wynosić maks. 1000 zł</div>
 
       <app-add-plan [eventPlan]="eventPlan"></app-add-plan>
-      
+
       <button [disabled]="!eventForm.valid" type="submit">Zatwierdź</button>
     </form>
   </div>

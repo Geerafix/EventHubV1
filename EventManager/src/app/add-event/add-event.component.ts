@@ -35,19 +35,15 @@ export class AddEventComponent implements OnInit {
 
     this.eventForm = new FormGroup({
       nazwa: new FormControl('', [Validators.required,
-                                  Validators.minLength(5),
                                   Validators.maxLength(30)]),
 
       rodzaj: new FormControl('', [Validators.required,
-                                   Validators.minLength(5),
                                    Validators.maxLength(30)]),
 
       organizator: new FormControl('', [Validators.required,
-                                        Validators.minLength(5),
                                         Validators.maxLength(30)]),
 
       miejsce: new FormControl('', [Validators.required,
-                                    Validators.minLength(5),
                                     Validators.maxLength(30)]),
 
       max_ilosc_osob: new FormControl('', [Validators.required,
