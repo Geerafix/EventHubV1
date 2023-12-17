@@ -82,8 +82,7 @@ export class AddEventComponent implements OnInit {
                             this.participants);
 
     this.eventDataService.postData(newEvent).subscribe();
-
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
   validEventDate(control: AbstractControl): { [key: string]: any } | null {

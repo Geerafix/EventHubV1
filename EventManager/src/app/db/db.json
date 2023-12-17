@@ -25,6 +25,44 @@
         {
           "imie": "Jan",
           "nazwisko": "Kowalski",
+          "email": "jan.kowalski@example.com",
+          "wiek": "1999-08-29",
+          "nr_telefonu": "123456789"
+        },
+        {
+          "imie": "Anna",
+          "nazwisko": "Nowak",
+          "email": "anna.nowak@example.com",
+          "wiek": "1995-02-03",
+          "nr_telefonu": "987654321"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nazwa": "Sylwester z Polsatem",
+      "rodzaj": "Koncert",
+      "organizator": "Polsat",
+      "miejsce": "Kobylnica, sala koncertowa",
+      "max_ilosc_osob": 10000,
+      "data_wydarzenia": "2023-12-30T00:00:00.000Z",
+      "cena_biletu": 50,
+      "plan": [
+        {
+          "nazwa": "Akcent",
+          "godz_rozpoczecia": "21:00",
+          "godz_zakonczenia": "21:30"
+        },
+        {
+          "nazwa": "Savage",
+          "godz_rozpoczecia": "19:30",
+          "godz_zakonczenia": "20:30"
+        }
+      ],
+      "uczestnicy": [
+        {
+          "imie": "Jan",
+          "nazwisko": "Kowalski",
           "wiek": "1999-08-29",
           "email": "jan.kowalski@example.com",
           "nr_telefonu": "123456789"
@@ -39,13 +77,13 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "nazwa": "Sylwester z Polsatem",
       "rodzaj": "Koncert",
       "organizator": "Polsat",
       "miejsce": "Kobylnica, sala koncertowa",
       "max_ilosc_osob": 10000,
-      "data_wydarzenia": "2023-12-30T00:00:00.000Z",
+      "data_wydarzenia": "2022-12-30T00:00:00.000Z",
       "cena_biletu": 50,
       "plan": [
         {

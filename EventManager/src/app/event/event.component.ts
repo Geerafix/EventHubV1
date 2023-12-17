@@ -9,6 +9,7 @@ import { EventDataService } from '../services/event-data.service';
 import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
 import { ScaleDirective } from '../directives/scale.directive';
 import { HighlightDirective } from '../directives/highlight.directive';
+import { DateFilterPipe } from '../pipes/date-filter.pipe';
 import { Plan } from '../models/Plan';
 import { Participant } from '../models/Participant';
 
@@ -21,6 +22,7 @@ import { Participant } from '../models/Participant';
               FormsModule,
               SearchPipe,
               SearchByDatePipe,
+              DateFilterPipe,
               RouterLink,
               RouterOutlet,
               RouterLinkActive,

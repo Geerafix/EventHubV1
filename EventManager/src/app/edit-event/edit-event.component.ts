@@ -99,8 +99,7 @@ export class EditEventComponent {
                             this.eventParticipants);
 
     this.eventDataService.updateData(this.event._id, modifiedEvent).subscribe();
-
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
   validEventDate(control: AbstractControl): { [key: string]: any } | null {
