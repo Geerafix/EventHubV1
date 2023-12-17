@@ -61,6 +61,6 @@ button:hover {
   gap: 20px;
 }
 
-.interact > a:nth-child(3) {
+.interact > :last-child {
   color: red;
 }
