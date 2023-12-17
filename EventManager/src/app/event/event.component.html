@@ -21,7 +21,7 @@
       <label><span class="info">Data wydarzenia: </span>{{ event._data_wydarzenia | date: 'dd.MM.yyyy' }}</label>
       <div class="interact">
         <a scale [_scale]="1.1" (click)="showEventDetails(event)" id="info">Sczegóły</a>
-        <a scale [_scale]="1.1" (click)="buyTicket(event)">Kup bilet</a>
+        <a scale [_scale]="1.1" (click)="buyTicket(event)" *ngIf="event._uczestnicy.length < event._max_ilosc_osob">Kup bilet</a>
       </div>
     </div>
   </div>
