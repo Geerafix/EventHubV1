@@ -2,320 +2,46 @@
   "events": [
     {
       "id": 1,
-      "nazwa": "PIERWSZY",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
+      "nazwa": "Sylwester z TVP2",
+      "rodzaj": "Koncert",
+      "organizator": "Telewizja Polska",
+      "miejsce": "Zakopane, sala koncertowa",
+      "max_ilosc_osob": 10000,
+      "data_wydarzenia": "2023-12-23T00:00:00.000Z",
+      "cena_biletu": 50,
       "plan": [
         {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
+          "nazwa": "Modern Talking",
+          "godz_rozpoczecia": "18:00",
+          "godz_zakonczenia": "19:30"
         },
         {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
+          "nazwa": "Bad Boys Blue",
+          "godz_rozpoczecia": "19:30",
+          "godz_zakonczenia": "20:30"
         }
       ],
-      "uczestnicy": [
-        {
-          "imie": "aaa",
-          "nazwisko": "gggg",
-          "email": "1234-23-09",
-          "wiek": "w@wp.pl",
-          "nr_telefonu": 123123123
-        },
-        {
-          "imie": "Beczka",
-          "nazwisko": "Breczka",
-          "email": "2001-02-09",
-          "wiek": "eeee@wp.pl",
-          "nr_telefonu": 123123123
-        }
-      ]
+      "uczestnicy": []
     },
     {
       "id": 2,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
+      "nazwa": "Sylwester z Polsatem",
+      "rodzaj": "Koncert",
+      "organizator": "Polsat",
+      "miejsce": "Kobylnica, sala koncertowa",
+      "max_ilosc_osob": 10000,
+      "data_wydarzenia": "2023-12-30T00:00:00.000Z",
+      "cena_biletu": 50,
       "plan": [
         {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
+          "nazwa": "Akcent",
+          "godz_rozpoczecia": "21:00",
+          "godz_zakonczenia": "21:30"
         },
         {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 3,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        },
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 4,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        },
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 5,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        },
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 6,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        },
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 7,
-      "nazwa": "asdasd",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "123123",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "2026-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        },
-        {
-          "nazwa": "123123",
-          "godz_rozpoczecia": "12:23",
-          "godz_zakonczenia": "12:12"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 10,
-      "nazwa": "TESTT",
-      "rodzaj": "TESTT",
-      "organizator": "TESTT",
-      "miejsce": "TESTT",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "+199999-03-11T23:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "ETSTT",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "ETSTT",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "ETSTT",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "ETSTT",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "ETSTT",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "ETSTT",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 200,
-      "nazwa": "asdasda",
-      "rodzaj": "asdasd",
-      "organizator": "asdasd",
-      "miejsce": "asdasd",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "9999-03-12T00:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        },
-        {
-          "nazwa": "asdAJOOOOOOOOOOOOOOOOOOOOOOOO",
-          "godz_rozpoczecia": "12:03",
-          "godz_zakonczenia": "12:03"
-        }
-      ],
-      "uczestnicy": []
-    },
-    {
-      "id": 2000,
-      "nazwa": "LOOOOOOOOOOOL",
-      "rodzaj": "LOOOOOOOOOOOL",
-      "organizator": "LOOOOOOOOOOOL",
-      "miejsce": "LOOOOOOOOOOOL",
-      "max_ilosc_osob": 123,
-      "data_wydarzenia": "9999-03-12T00:00:00.000Z",
-      "cena_biletu": 123,
-      "plan": [
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
-        },
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
-        },
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
-        },
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
-        },
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
-        },
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
-        },
-        {
-          "nazwa": "LOOOOOOOOOOOL",
-          "godz_rozpoczecia": "12:32",
-          "godz_zakonczenia": "12:23"
+          "nazwa": "Savage",
+          "godz_rozpoczecia": "19:30",
+          "godz_zakonczenia": "20:30"
         }
       ],
       "uczestnicy": []

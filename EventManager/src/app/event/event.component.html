@@ -1,5 +1,5 @@
 <main id="container">
-  <div class="main-container"  *ngIf="(!isAddEvent() && !isEventDetails() && !isBuyTicket())">
+  <div class="main-container"  *ngIf="(!isAddEvent() && !isEventDetails() && !isBuyTicket() && !isEditEvent())">
     <div class="control-container">
       <div class="search-container">
         <input [(ngModel)]="search" placeholder="Wyszukaj" id="search"/>
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="main-container" *ngIf="isAddEvent() || isBuyTicket() || isEventDetails()">
+  <div class="main-container" *ngIf="isAddEvent() || isBuyTicket() || isEventDetails() || isEditEvent()">
     <router-outlet></router-outlet>
   </div>
 </main>

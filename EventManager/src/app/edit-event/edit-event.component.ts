@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
 import { Event } from '../models/Event';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -9,27 +9,29 @@ import { Plan } from '../models/Plan';
 import { Participant } from '../models/Participant';
 
 @Component({
-  selector: 'app-add-event',
+  selector: 'app-edit-event',
   standalone: true,
   imports: [CommonModule,
-            RouterLink,
-            RouterLinkActive,
-            RouterOutlet,
-            FormsModule,
-            ReactiveFormsModule,
-            AddPlanComponent
-  ],
-  templateUrl: './add-event.component.html',
-  styleUrl: './add-event.component.css'
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+    FormsModule,
+    ReactiveFormsModule,
+    AddPlanComponent
+],
+  templateUrl: './edit-event.component.html',
+  styleUrl: './edit-event.component.css'
 })
-
-export class AddEventComponent implements OnInit {
+export class EditEventComponent {
+  public event!: Event;
   public eventPlan: Plan[] = [];
   public participants: Participant[] = [];
   public eventForm: FormGroup;
   public dbSize!: number;
+  public id!: number;
 
   constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private eventDataService: EventDataService,) {
 
@@ -62,15 +64,29 @@ export class AddEventComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => { this.id = +params['id']; });
     this.eventDataService.getData().subscribe((events: Event[]) => {
       this.dbSize = events.length;
     });
+    this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
+      this.event = event;
+      this.eventPlan = event._plan;
+      this.eventForm.patchValue({
+        nazwa: event._nazwa,
+        rodzaj: event._rodzaj,
+        organizator: event._organizator,
+        miejsce: event._miejsce,
+        max_ilosc_osob: event._max_ilosc_osob,
+        data_wydarzenia: event._data_wydarzenia.toISOString().split('T')[0],
+        cena_biletu: event._cena_biletu
+      });
+    });
   }
 
-  back(): void { this.router.navigate(['/']); }
+  back(): void { this.router.navigate(['/szczegoly', this.id]); }
 
   addEventToEventList(): void {
-    let newEvent = new Event(this.dbSize + 1,
+    let modifiedEvent = new Event(this.event._id,
                             this.eventForm.value.nazwa,
                             this.eventForm.value.rodzaj,
                             this.eventForm.value.organizator,
@@ -81,7 +97,7 @@ export class AddEventComponent implements OnInit {
                             this.eventPlan,
                             this.participants);
 
-    this.eventDataService.postData(newEvent).subscribe();
+    this.eventDataService.updateData(this.event._id, modifiedEvent).subscribe();
 
     this.router.navigate(['/']);
   }

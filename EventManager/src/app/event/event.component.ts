@@ -43,11 +43,12 @@ export class EventComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventDataService.getData().subscribe((events: Event[]) => {
-      events.sort((a, b) => b._data_wydarzenia.getTime() - a._data_wydarzenia.getTime());
+      events.sort((a, b) => a._data_wydarzenia.getTime() - b._data_wydarzenia.getTime());
       this.eventList = events;
     });
   }
 
+  isEditEvent(): boolean { return this.router.url.startsWith('/edytuj'); }
   isAddEvent(): boolean { return this.router.url.startsWith('/dodaj-wydarzenie'); }
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
   isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }

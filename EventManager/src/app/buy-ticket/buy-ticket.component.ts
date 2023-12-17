@@ -18,36 +18,38 @@ export class BuyTicketComponent implements OnInit {
   public event!: Event;
   public id!: number;
 
-  constructor(private router: Router, private route: ActivatedRoute, private eventDataService: EventDataService ) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private eventDataService: EventDataService ) {
     this.buyTicketForm = new FormGroup({
       imie: new FormControl('', [Validators.required,
                                  Validators.minLength(3),
-                                 Validators.maxLength(20),
-                                 Validators.pattern(/^[A-Za-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ][a-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ]*$/)]),
+                                 Validators.maxLength(30),
+                                 Validators.pattern(/^[A-Z][a-ząęóśłżźćń]*$/)]),
 
       nazwisko: new FormControl('', [Validators.required,
                                      Validators.minLength(3),
-                                     Validators.maxLength(20)]),
+                                     Validators.maxLength(30),
+                                     Validators.pattern(/^[A-Z][a-ząęóśłżźćń]*$/)]),
 
       data_urodzenia: new FormControl('', [Validators.required,
                                            this.validBirthDate]),
 
       email: new FormControl('', [Validators.required,
-                                  this.validEmail]),
+                                  Validators.email]),
 
       nr_telefonu: new FormControl('', [Validators.required,
                                         Validators.min(100000000),
                                         Validators.max(999999999)]),
     });
+  }
 
+  ngOnInit(): void {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
     this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
       this.event = event;
     });
-  }
-
-  ngOnInit(): void {
-
   }
 
   buyTicket(): void {
@@ -56,7 +58,6 @@ export class BuyTicketComponent implements OnInit {
                                               this.buyTicketForm.value.data_urodzenia,
                                               this.buyTicketForm.value.email,
                                               this.buyTicketForm.value.nr_telefonu));
-
     this.eventDataService.updateData(this.id, this.event).subscribe();
     this.router.navigate(['']);
   }
@@ -66,15 +67,6 @@ export class BuyTicketComponent implements OnInit {
   validBirthDate(control: AbstractControl) : {[key: string]: any} | null {
     let birthDate = new Date(control.value);
     let diff = new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate());
-    if (birthDate >= diff) {
-      return { 'validBirthDate': true };
-    }
-    return null;
-  }
-
-  validEmail(control: AbstractControl) : {[key: string]: any} | null {
-
-    return null;
+    return (birthDate >= diff) ? { 'validBirthDate': true } : null;
   }
 }
-

@@ -65,8 +65,8 @@ export class EventDataService {
             return new Participant(
               participant.imie,
               participant.nazwisko,
-              participant.email,
               participant.wiek,
+              participant.email,
               participant.nr_telefonu
           )}));
     }));

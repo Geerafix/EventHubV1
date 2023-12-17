@@ -6,7 +6,7 @@
   </button>
   <div class="form-container">
     <form id="event-form-container" [formGroup]="eventForm" (ngSubmit)="addEventToEventList()">
-      <label>Formularz dodawania wydarzenia</label>
+      <label>Formularz edycji wydarzenia: {{ event._nazwa }}</label>
       <input formControlName="nazwa" placeholder="Nazwa wydarzenia">
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['required']">Nazwa wydarzenia jest wymagana</div>
         <div class="error" *ngIf="eventForm.controls['nazwa'].errors?.['minlength']">Nazwa wydarzenia musi mieć min. 5 znaków</div>
@@ -40,7 +40,7 @@
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['max']">Cena bletu może wynosić maks. 1000 zł</div>
 
       <app-add-plan [eventPlan]="eventPlan"></app-add-plan>
-      
+
       <button [disabled]="!eventForm.valid" type="submit">Zatwierdź</button>
     </form>
   </div>

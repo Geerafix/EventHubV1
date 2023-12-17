@@ -21,23 +21,23 @@ export class EventDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private eventDataService: EventDataService) {
+  }
+
+  ngOnInit(): void {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
     this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
       this.event = event;
     });
   }
 
-  ngOnInit(): void {
-
-  }
-
   isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
   isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
 
   back(): void { this.router.navigate(['']); }
-  buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]) }
+  editEvent(event: Event) { this.router.navigate(['/edytuj', event._id]); }
+  buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]); }
   deleteEvent(id: number) {
-    this.eventDataService.deleteData(this.id).subscribe();
+    this.eventDataService.deleteData(id).subscribe();
     this.router.navigate(['']);
   }
 }

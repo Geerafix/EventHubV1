@@ -12,11 +12,13 @@
         <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['required']">Imię jest wymagane</div>
         <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['minlength']">Imię musi mieć min. 3 znaki</div>
         <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['maxlength']">Imię może mieć maks. 30 znaków</div>
+        <div class="error" *ngIf="buyTicketForm.controls['imie'].errors?.['pattern']">Nieprawidłowe imię</div>
 
       <input formControlName="nazwisko" type="text" placeholder="Nazwisko">
         <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['required']">Nazwisko jest wymagane</div>
         <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['minlength']">Nazwisko musi mieć min. 3 znaki</div>
         <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['maxlength']">Nazwisko może mieć maks. 30 znaków</div>
+        <div class="error" *ngIf="buyTicketForm.controls['nazwisko'].errors?.['pattern']">Nieprawidłowe nazwisko</div>
 
       <input formControlName="data_urodzenia" type="text" placeholder="Data urodzenia" onblur="(this.type = 'text')" onfocus="(this.type = 'date')">
         <div class="error" *ngIf="buyTicketForm.controls['data_urodzenia'].errors?.['required']">Data ur. jest wymagana</div>
@@ -24,14 +26,14 @@
 
       <input formControlName="email" type="email" placeholder="E-mail">
         <div class="error" *ngIf="buyTicketForm.controls['email'].errors?.['required']">Email jest wymagany</div>
-        <div class="error" *ngIf="buyTicketForm.controls['email'].errors?.['validEmail']">Niepoprawny format</div>
+        <div class="error" *ngIf="buyTicketForm.controls['email'].errors?.['email']">Niepoprawny format</div>
 
       <input formControlName="nr_telefonu" type="number" placeholder="Numer telefonu">
         <div class="error" *ngIf="buyTicketForm.controls['nr_telefonu'].errors?.['required']">Nr telefonu jest wymagany</div>
         <div class="error" *ngIf="buyTicketForm.controls['nr_telefonu'].errors?.['min']">Niepoprawny numer telefonu</div>
         <div class="error" *ngIf="buyTicketForm.controls['nr_telefonu'].errors?.['max']">Niepoprawny numer telefonu</div>
 
-      <button [disabled]="!buyTicketForm.valid" type="submit">Zatwierdź</button>
+      <button [disabled]="!buyTicketForm.valid" type="submit">Kup bilet</button>
     </form>
   </div>
 </main>
