@@ -10,7 +10,6 @@
 
     <div id="errors">
       <div class="error" *ngIf="planForm.controls['nazwa'].errors?.['required']">Nazwa planu jest wymagana</div>
-      <div class="error" *ngIf="planForm.controls['nazwa'].errors?.['minlength']">Nazwa planu musi mieć min. 5 znaków</div>
       <div class="error" *ngIf="planForm.controls['nazwa'].errors?.['maxlength']">Nazwa planu może mieć maks. 30 znaków</div>
       <div class="error" *ngIf="planForm.controls['godz_rozpoczecia'].errors?.['required']">Godzina rozpoczęcia jest wymagana</div>
       <div class="error" *ngIf="planForm.controls['godz_zakonczenia'].errors?.['required']">Godzina zakończenia jest wymagana</div>
