@@ -53,6 +53,7 @@ export class AddEventComponent implements OnInit {
                                             this.validEventDate]),
 
       cena_biletu: new FormControl('', [Validators.required,
+                                        Validators.min(0),
                                         Validators.max(1000)])
     });
   }

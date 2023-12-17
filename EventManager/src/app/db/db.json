@@ -42,6 +42,13 @@
           "wiek": "2002-03-12",
           "email": "s@pw.pl",
           "nr_telefonu": 123123343
+        },
+        {
+          "imie": "Lol",
+          "nazwisko": "Lol",
+          "wiek": "1999-01-17",
+          "email": "w@wp.pl",
+          "nr_telefonu": 222222222
         }
       ]
     },
@@ -201,13 +208,6 @@
           "wiek": "1995-02-03",
           "email": "anna.nowak@example.com",
           "nr_telefonu": "987654321"
-        },
-        {
-          "imie": "Asd",
-          "nazwisko": "Asd",
-          "wiek": "2002-03-12",
-          "email": "s@pw.pl",
-          "nr_telefonu": 123123343
         }
       ]
     }

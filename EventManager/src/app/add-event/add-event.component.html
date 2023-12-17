@@ -33,6 +33,7 @@
 
       <input formControlName="cena_biletu" type="number" placeholder="Cena biletu">
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['required']">Cena biletu jest wymagana</div>
+        <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['min']">Cena biletu nie mże być ujemna</div>
         <div class="error" *ngIf="eventForm.controls['cena_biletu'].errors?.['max']">Cena bletu może wynosić maks. 1000 zł</div>
 
       <app-add-plan [eventPlan]="eventPlan"></app-add-plan>
