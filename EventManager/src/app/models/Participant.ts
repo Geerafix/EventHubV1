@@ -2,8 +2,8 @@ export class Participant {
   constructor(
     private imie: string,
     private nazwisko: string,
-    private email: string,
     private wiek: number,
+    private email: string,
     private nr_telefonu: number
   ) {}
 
