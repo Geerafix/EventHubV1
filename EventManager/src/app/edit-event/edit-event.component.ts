@@ -25,7 +25,7 @@ import { Participant } from '../models/Participant';
 export class EditEventComponent {
   public event!: Event;
   public eventPlan: Plan[] = [];
-  public participants: Participant[] = [];
+  public eventParticipants: Participant[] = [];
   public eventForm: FormGroup;
   public dbSize!: number;
   public id!: number;
@@ -71,6 +71,7 @@ export class EditEventComponent {
     this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
       this.event = event;
       this.eventPlan = event._plan;
+      this.eventParticipants = event._uczestnicy;
       this.eventForm.patchValue({
         nazwa: event._nazwa,
         rodzaj: event._rodzaj,
@@ -95,7 +96,7 @@ export class EditEventComponent {
                             new Date(this.eventForm.value.data_wydarzenia),
                             this.eventForm.value.cena_biletu,
                             this.eventPlan,
-                            this.participants);
+                            this.eventParticipants);
 
     this.eventDataService.updateData(this.event._id, modifiedEvent).subscribe();
 

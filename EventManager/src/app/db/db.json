@@ -21,7 +21,22 @@
           "godz_zakonczenia": "20:30"
         }
       ],
-      "uczestnicy": []
+      "uczestnicy": [
+        {
+          "imie": "Jan",
+          "nazwisko": "Kowalski",
+          "wiek": "1999-08-29",
+          "email": "jan.kowalski@example.com",
+          "nr_telefonu": "123456789"
+        },
+        {
+          "imie": "Anna",
+          "nazwisko": "Nowak",
+          "wiek": "1995-02-03",
+          "email": "anna.nowak@example.com",
+          "nr_telefonu": "987654321"
+        }
+      ]
     },
     {
       "id": 2,
@@ -44,7 +59,22 @@
           "godz_zakonczenia": "20:30"
         }
       ],
-      "uczestnicy": []
+      "uczestnicy": [
+        {
+          "imie": "Jan",
+          "nazwisko": "Kowalski",
+          "wiek": "1999-08-29",
+          "email": "jan.kowalski@example.com",
+          "nr_telefonu": "123456789"
+        },
+        {
+          "imie": "Anna",
+          "nazwisko": "Nowak",
+          "wiek": "1995-02-03",
+          "email": "anna.nowak@example.com",
+          "nr_telefonu": "987654321"
+        }
+      ]
     }
   ]
 }
