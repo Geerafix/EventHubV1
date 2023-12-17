@@ -126,7 +126,7 @@ Wymagania:
 
 * - walidacja danych wprowadzanych przez użytkownika ( w każdym przypadku wprowadzania danych, czy odpowiednio dobrano walidatory) - 2pkt,
 
-- dwukierunkowa komunikacja pomiędzy komponentami (czy jest w każdym spodziewanym przypadku) - 2pkt,
+* - dwukierunkowa komunikacja pomiędzy komponentami (czy jest w każdym spodziewanym przypadku) - 2pkt,
 
 - modyfikacja danych odbywa się tylko w jednym komponencie - 1pkt
 

@@ -24,7 +24,7 @@ export class AddPlanComponent {
       godz_rozpoczecia: new FormControl('', [Validators.required]),
 
       godz_zakonczenia: new FormControl('', [Validators.required,
-                                            this.validEndHour.bind(this)]),
+                                            this.validEndHour]),
     });
   }
 
