@@ -27,7 +27,6 @@ export class EditEventComponent {
   public eventPlan: Plan[] = [];
   public eventParticipants: Participant[] = [];
   public eventForm: FormGroup;
-  public dbSize!: number;
   public id!: number;
 
   constructor(
@@ -65,9 +64,6 @@ export class EditEventComponent {
 
   ngOnInit() {
     this.route.params.subscribe((params) => { this.id = +params['id']; });
-    this.eventDataService.getData().subscribe((events: Event[]) => {
-      this.dbSize = events.length;
-    });
     this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
       this.event = event;
       this.eventPlan = event._plan;
@@ -88,15 +84,15 @@ export class EditEventComponent {
 
   addEventToEventList(): void {
     let modifiedEvent = new Event(this.event._id,
-                            this.eventForm.value.nazwa,
-                            this.eventForm.value.rodzaj,
-                            this.eventForm.value.organizator,
-                            this.eventForm.value.miejsce,
-                            this.eventForm.value.max_ilosc_osob,
-                            new Date(this.eventForm.value.data_wydarzenia),
-                            this.eventForm.value.cena_biletu,
-                            this.eventPlan,
-                            this.eventParticipants);
+                                  this.eventForm.value.nazwa,
+                                  this.eventForm.value.rodzaj,
+                                  this.eventForm.value.organizator,
+                                  this.eventForm.value.miejsce,
+                                  this.eventForm.value.max_ilosc_osob,
+                                  new Date(this.eventForm.value.data_wydarzenia),
+                                  this.eventForm.value.cena_biletu,
+                                  this.eventPlan,
+                                  this.eventParticipants);
 
     this.eventDataService.updateData(this.event._id, modifiedEvent).subscribe();
     this.router.navigate(['']);

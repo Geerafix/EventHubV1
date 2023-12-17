@@ -25,22 +25,22 @@
         {
           "imie": "Jan",
           "nazwisko": "Kowalski",
-          "email": "1999-08-29",
-          "wiek": "jan.kowalski@example.com",
+          "wiek": "1999-08-29",
+          "email": "jan.kowalski@example.com",
           "nr_telefonu": "123456789"
         },
         {
           "imie": "Anna",
           "nazwisko": "Nowak",
-          "email": "1995-02-03",
-          "wiek": "anna.nowak@example.com",
+          "wiek": "1995-02-03",
+          "email": "anna.nowak@example.com",
           "nr_telefonu": "987654321"
         },
         {
           "imie": "Asd",
           "nazwisko": "Asd",
-          "email": "2002-03-12",
-          "wiek": "s@pw.pl",
+          "wiek": "2002-03-12",
+          "email": "s@pw.pl",
           "nr_telefonu": 123123343
         }
       ]
@@ -53,7 +53,7 @@
       "miejsce": "Kobylnica, sala koncertowa",
       "max_ilosc_osob": 10000,
       "data_wydarzenia": "2023-12-30T00:00:00.000Z",
-      "cena_biletu": 50,
+      "cena_biletu": 500,
       "plan": [
         {
           "nazwa": "Akcent",
