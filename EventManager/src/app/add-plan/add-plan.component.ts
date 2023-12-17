@@ -37,7 +37,7 @@ export class AddPlanComponent {
     let startTime = control.root.get('godz_rozpoczecia')?.value;
     let endTime = control.value;
 
-    if ((endTime && startTime) && (endTime >= startTime)) {
+    if ((endTime && startTime) && (endTime <= startTime)) {
         return { validEndHour: true };
     }
 
