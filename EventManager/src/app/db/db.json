@@ -25,16 +25,23 @@
         {
           "imie": "Jan",
           "nazwisko": "Kowalski",
-          "email": "jan.kowalski@example.com",
-          "wiek": "1999-08-29",
+          "email": "1999-08-29",
+          "wiek": "jan.kowalski@example.com",
           "nr_telefonu": "123456789"
         },
         {
           "imie": "Anna",
           "nazwisko": "Nowak",
-          "email": "anna.nowak@example.com",
-          "wiek": "1995-02-03",
+          "email": "1995-02-03",
+          "wiek": "anna.nowak@example.com",
           "nr_telefonu": "987654321"
+        },
+        {
+          "imie": "Asd",
+          "nazwisko": "Asd",
+          "email": "2002-03-12",
+          "wiek": "s@pw.pl",
+          "nr_telefonu": 123123343
         }
       ]
     },

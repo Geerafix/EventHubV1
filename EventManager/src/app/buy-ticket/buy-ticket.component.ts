@@ -1,4 +1,4 @@
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet, RouterLinkActive, ActivatedRoute} from '@angular/router';
@@ -64,7 +64,7 @@ export class BuyTicketComponent implements OnInit {
 
   back() { this.router.navigate(['']); }
 
-  validBirthDate(control: AbstractControl) : {[key: string]: any} | null {
+  validBirthDate(control: AbstractControl): ValidationErrors | null {
     let birthDate = new Date(control.value);
     let diff = new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate());
     return (birthDate >= diff) ? { 'validBirthDate': true } : null;

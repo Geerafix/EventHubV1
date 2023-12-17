@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Plan } from '../models/Plan';
 import { PlanListFormComponent } from '../plan-list-form/plan-list-form.component';
 
@@ -24,7 +24,7 @@ export class AddPlanComponent {
       godz_rozpoczecia: new FormControl('', [Validators.required]),
 
       godz_zakonczenia: new FormControl('', [Validators.required,
-                                             this.validEndHour]),
+                                            this.validEndHour.bind(this)]),
     });
   }
 
@@ -34,7 +34,13 @@ export class AddPlanComponent {
                                  this.planForm.value.godz_zakonczenia));
   }
 
-  validEndHour(control: AbstractControl): { [key: string]: any } | null {
+  validEndHour(control: AbstractControl): ValidationErrors | null {
+    const startTime = control.root.get('godz_rozpoczecia')?.value;
+    const endTime = control.value;
+
+    if (startTime && endTime && startTime >= endTime) {
+        return { validEndHour: true };
+    }
 
     return null;
   }

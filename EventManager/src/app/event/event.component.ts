@@ -10,8 +10,6 @@ import { SearchByDatePipe } from '../pipes/search-by-date.pipe';
 import { ScaleDirective } from '../directives/scale.directive';
 import { HighlightDirective } from '../directives/highlight.directive';
 import { DateFilterPipe } from '../pipes/date-filter.pipe';
-import { Plan } from '../models/Plan';
-import { Participant } from '../models/Participant';
 
 @Component({
     selector: 'app-event',

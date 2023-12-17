@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
 import { Event } from '../models/Event';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { AddPlanComponent } from '../add-plan/add-plan.component';
 import { Plan } from '../models/Plan';
 import { Participant } from '../models/Participant';
@@ -85,7 +85,7 @@ export class AddEventComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  validEventDate(control: AbstractControl): { [key: string]: any } | null {
+  validEventDate(control: AbstractControl): ValidationErrors | null {
     return (new Date(control.value) < new Date()) ? { 'validEventDate': true } : null;
   }
 }
