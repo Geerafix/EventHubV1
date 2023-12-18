@@ -5,6 +5,7 @@ import { Event } from '../models/Event';
   name: 'searchByDate',
   standalone: true,
 })
+
 export class SearchByDatePipe implements PipeTransform {
   transform(value: Event[], startDate?: string, endDate?: string): Event[] {
     if (!startDate || !endDate) { return value; }

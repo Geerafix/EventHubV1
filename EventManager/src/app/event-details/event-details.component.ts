@@ -11,8 +11,14 @@ import { ScaleDirective } from '../directives/scale.directive';
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, RouterLinkActive, PlanComponent, ScaleDirective]
+  imports: [CommonModule,
+            RouterLink,
+            RouterOutlet,
+            RouterLinkActive,
+            PlanComponent,
+            ScaleDirective]
 })
+
 export class EventDetailsComponent implements OnInit {
   public event!: Event;
   public id!: number;
@@ -24,18 +30,35 @@ export class EventDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => { this.id = +params['id']; });
+    this.route.params.subscribe((params) => {
+      this.id = +params['id'];
+    });
+
     this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
       this.event = event;
     });
   }
 
-  isEventDetails(): boolean { return this.router.url.startsWith('/szczegoly'); }
-  isBuyTicket(): boolean { return this.router.url.startsWith('/kup-bilet'); }
+  isEventDetails(): boolean {
+    return this.router.url.startsWith('/szczegoly');
+  }
 
-  back(): void { this.router.navigate(['']); }
-  editEvent(event: Event) { this.router.navigate(['/edytuj', event._id]); }
-  buyTicket(event: Event): void { this.router.navigate(['/kup-bilet', event._id]); }
+  isBuyTicket(): boolean {
+    return this.router.url.startsWith('/kup-bilet');
+  }
+
+  back(): void {
+    this.router.navigate(['']);
+  }
+
+  editEvent(event: Event) {
+    this.router.navigate(['/edytuj', event._id]);
+  }
+
+  buyTicket(event: Event): void {
+    this.router.navigate(['/kup-bilet', event._id]);
+  }
+
   deleteEvent(id: number) {
     this.eventDataService.deleteData(id).subscribe();
     this.router.navigate(['']);

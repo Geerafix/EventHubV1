@@ -6,10 +6,13 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-plan',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule,
+            FormsModule
+  ],
   templateUrl: './plan.component.html',
   styleUrl: './plan.component.css'
 })
+
 export class PlanComponent {
   @Input() eventPlan: Plan[] | undefined;
 }

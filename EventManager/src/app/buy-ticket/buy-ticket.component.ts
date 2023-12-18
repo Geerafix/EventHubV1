@@ -46,7 +46,10 @@ export class BuyTicketComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => { this.id = +params['id']; });
+    this.route.params.subscribe((params) => {
+      this.id = +params['id'];
+    });
+    
     this.eventDataService.getSingleData(this.id).subscribe((event: Event) => {
       this.event = event;
     });

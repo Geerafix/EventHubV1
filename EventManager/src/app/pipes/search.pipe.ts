@@ -5,6 +5,7 @@ import { Event } from '../models/Event';
   name: 'search',
   standalone: true,
 })
+
 export class SearchPipe implements PipeTransform {
   transform(value: Event[], searchValue: string, searchBy: string): Event[] {
     if (!value || !searchValue) {

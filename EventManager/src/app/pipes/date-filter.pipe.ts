@@ -5,6 +5,7 @@ import { Event } from '../models/Event';
   name: 'dateFilter',
   standalone: true
 })
+
 export class DateFilterPipe implements PipeTransform {
   transform(events: Event[]): Event[] {
     return events.filter((event) => {

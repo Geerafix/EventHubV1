@@ -12,5 +12,7 @@ import { Plan } from '../models/Plan';
 export class PlanListFormComponent {
   @Input() eventPlan: Plan[] | undefined;
 
-  removePlan(idx: number) { this.eventPlan?.splice(idx, 1); }
+  removePlan(idx: number) {
+    this.eventPlan?.splice(idx, 1);
+  }
 }
