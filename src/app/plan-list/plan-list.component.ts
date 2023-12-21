@@ -9,10 +9,10 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule,
             FormsModule
   ],
-  templateUrl: './plan.component.html',
-  styleUrl: './plan.component.css'
+  templateUrl: './plan-list.component.html',
+  styleUrl: './plan-list.component.css'
 })
 
-export class PlanComponent {
+export class PlanListComponent {
   @Input() eventPlan: Plan[] | undefined;
 }

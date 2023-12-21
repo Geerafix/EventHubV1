@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../models/Event';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { EventDataService } from '../services/event-data.service';
-import { PlanComponent } from '../plan/plan.component';
+import { PlanListComponent } from '../plan-list/plan-list.component';
 import { ScaleDirective } from '../directives/scale.directive';
 
 @Component({
@@ -15,7 +15,7 @@ import { ScaleDirective } from '../directives/scale.directive';
             RouterLink,
             RouterOutlet,
             RouterLinkActive,
-            PlanComponent,
+            PlanListComponent,
             ScaleDirective]
 })
 
