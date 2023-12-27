@@ -1,4 +1,4 @@
-# EventManager
+# EventHub
 
 Aplikacja napisana w technologii Angular, umożliwiająca planowanie wydarzeń oraz zarządzanie nimi
 
